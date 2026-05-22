@@ -855,6 +855,28 @@ loadScript(
     }
   }
 
+  // Get test from Gun.js directly (for real-time sync)
+  function getTestByIdFromGun(testId, callback) {
+    if (!_gunReady || !_gunTestsRef) {
+      // Fallback to localStorage
+      callback(getTestById(testId));
+      return;
+    }
+    try {
+      _gunTestsRef.get(testId).once(function(data) {
+        if (!data) {
+          callback(getTestById(testId));
+          return;
+        }
+        var clean = cleanGunObject(data);
+        callback(clean);
+      });
+    } catch(e) {
+      console.warn('Gun.js o\'qishda xatolik:', e);
+      callback(getTestById(testId));
+    }
+  }
+
   // Convert Gun.js data to array (removes _ meta fields)
   function gunDataToArray(data) {
     var arr = [];
@@ -1678,49 +1700,51 @@ loadScript(
   }
 
   function updateTeacherControl(testId) {
-    var test = getTestById(testId);
-    if (!test) return;
-    var connected = test.connectedStudents || [];
-    document.getElementById('connectedCount').textContent = connected.length;
-    document.getElementById('finishedCount').textContent = (test.results || []).length;
+    getTestByIdFromGun(testId, function(test) {
+      if (!test) return;
+      
+      var connected = test.connectedStudents || [];
+      document.getElementById('connectedCount').textContent = connected.length;
+      document.getElementById('finishedCount').textContent = (test.results || []).length;
 
-    var membersHtml = '';
-    for (var i = 0; i < connected.length; i++) {
-      membersHtml += '<div class="member-chip">👤 ' + escHtml(connected[i].name) + '</div>';
-    }
-    document.getElementById('connectedMembers').innerHTML = membersHtml;
-
-    var startBtn = document.getElementById('startGroupBtn');
-    if (test.groupStarted) {
-      startBtn.textContent = '✅ Test boshlangan';
-      startBtn.disabled = true;
-    } else {
-      startBtn.textContent = '🚀 Testni boshlash (' + connected.length + ' talaba)';
-      startBtn.disabled = connected.length === 0;
-    }
-
-    if (test.results && test.results.length > 0) {
-      var resultsDiv = document.getElementById('resultsTable');
-      resultsDiv.style.display = 'block';
-      var rhtml = '<h4 style="margin-bottom:10px">📊 Natijalar</h4>' +
-        '<table style="width:100%;border-collapse:collapse;font-size:14px">' +
-        '<thead><tr style="border-bottom:1px solid var(--border)">' +
-        '<th style="padding:8px;text-align:left">#</th>' +
-        '<th style="padding:8px;text-align:left">Talaba</th>' +
-        '<th style="padding:8px;text-align:center">To\'g\'ri</th>' +
-        '<th style="padding:8px;text-align:center">Foiz</th></tr></thead><tbody>';
-      for (var i = 0; i < test.results.length; i++) {
-        var r = test.results[i];
-        var col = r.percentage >= 70 ? '#6ee7b7' : r.percentage >= 50 ? '#fcd34d' : '#fca5a5';
-        rhtml += '<tr style="border-bottom:1px solid rgba(255,255,255,0.05)">' +
-          '<td style="padding:8px">' + (i+1) + '</td>' +
-          '<td style="padding:8px">' + escHtml(r.studentName) + '</td>' +
-          '<td style="padding:8px;text-align:center;color:#6ee7b7">' + r.correct + '/' + r.total + '</td>' +
-          '<td style="padding:8px;text-align:center;font-weight:700;color:' + col + '">' + r.percentage + '%</td></tr>';
+      var membersHtml = '';
+      for (var i = 0; i < connected.length; i++) {
+        membersHtml += '<div class="member-chip">👤 ' + escHtml(connected[i].name) + '</div>';
       }
-      rhtml += '</tbody></table>';
-      resultsDiv.innerHTML = rhtml;
-    }
+      document.getElementById('connectedMembers').innerHTML = membersHtml;
+
+      var startBtn = document.getElementById('startGroupBtn');
+      if (test.groupStarted) {
+        startBtn.textContent = '✅ Test boshlangan';
+        startBtn.disabled = true;
+      } else {
+        startBtn.textContent = '🚀 Testni boshlash (' + connected.length + ' talaba)';
+        startBtn.disabled = connected.length === 0;
+      }
+
+      if (test.results && test.results.length > 0) {
+        var resultsDiv = document.getElementById('resultsTable');
+        resultsDiv.style.display = 'block';
+        var rhtml = '<h4 style="margin-bottom:10px">📊 Natijalar</h4>' +
+          '<table style="width:100%;border-collapse:collapse;font-size:14px">' +
+          '<thead><tr style="border-bottom:1px solid var(--border)">' +
+          '<th style="padding:8px;text-align:left">#</th>' +
+          '<th style="padding:8px;text-align:left">Talaba</th>' +
+          '<th style="padding:8px;text-align:center">To\'g\'ri</th>' +
+          '<th style="padding:8px;text-align:center">Foiz</th></tr></thead><tbody>';
+        for (var i = 0; i < test.results.length; i++) {
+          var r = test.results[i];
+          var col = r.percentage >= 70 ? '#6ee7b7' : r.percentage >= 50 ? '#fcd34d' : '#fca5a5';
+          rhtml += '<tr style="border-bottom:1px solid rgba(255,255,255,0.05)">' +
+            '<td style="padding:8px">' + (i+1) + '</td>' +
+            '<td style="padding:8px">' + escHtml(r.studentName) + '</td>' +
+            '<td style="padding:8px;text-align:center;color:#6ee7b7">' + r.correct + '/' + r.total + '</td>' +
+            '<td style="padding:8px;text-align:center;font-weight:700;color:' + col + '">' + r.percentage + '%</td></tr>';
+        }
+        rhtml += '</tbody></table>';
+        resultsDiv.innerHTML = rhtml;
+      }
+    });
   }
 
   function startGroupTest() {
@@ -1728,10 +1752,25 @@ loadScript(
     var idx = -1;
     for (var i = 0; i < tests.length; i++) { if (tests[i].id === currentTest.id) { idx = i; break; } }
     if (idx === -1) return;
+    
     tests[idx].groupStarted = true;
+    var startedTest = tests[idx];
+    
+    // Save to local storage
     saveTests(tests);
-    updateTestInCloud(tests[idx]);
-    showToast('Test boshlandi!', 'success');
+    
+    // IMPORTANT: Save to Gun.js so talabalar real-time sinkronizatsiya qila oladi!
+    if (_gunReady && _gunTestsRef) {
+      try {
+        var testCopy = JSON.parse(JSON.stringify(startedTest));
+        _gunTestsRef.get(startedTest.id).put(testCopy);
+        console.log('✅ Gun.js-da test "boshlandi" signali yuborildi. Barcha talabalar uchun!');
+      } catch(e) {
+        console.warn('Gun.js-da yozishda xatolik (offline rejim):', e.message);
+      }
+    }
+    
+    showToast('✅ Test boshlandi! Talabalar test boshlanganligini ko\'radi...', 'success');
     updateTeacherControl(currentTest.id);
   }
 
@@ -1818,16 +1857,31 @@ loadScript(
     showScreen('studentWaitScreen');
 
     if (window._waitPoll) clearInterval(window._waitPoll);
-    window._waitPoll = setInterval(function() {
-      var test = getTestById(currentTest.id);
-      if (!test) return;
-      var members = test.connectedStudents || [];
-      var mhtml = '';
-      for (var i = 0; i < members.length; i++) mhtml += '<div class="member-chip">👤 ' + escHtml(members[i].name) + '</div>';
-      document.getElementById('groupMembers').innerHTML = mhtml;
-      document.getElementById('waitCount').textContent = members.length + ' talaba ulangan';
-      if (test.groupStarted) { clearInterval(window._waitPoll); startTestForStudent(); }
-    }, 1500);
+    
+    // Real-time listener for group start signal
+    function checkTestStatus() {
+      getTestByIdFromGun(currentTest.id, function(test) {
+        if (!test) return;
+        
+        // Update members list
+        var members = test.connectedStudents || [];
+        var mhtml = '';
+        for (var i = 0; i < members.length; i++) mhtml += '<div class="member-chip">👤 ' + escHtml(members[i].name) + '</div>';
+        document.getElementById('groupMembers').innerHTML = mhtml;
+        document.getElementById('waitCount').textContent = members.length + ' talaba ulangan';
+        
+        // Check if teacher started the test
+        if (test.groupStarted) {
+          console.log('✅ O\'qituvchi testni boshladi! Talabalar uchun test boshlanmoqda...');
+          if (window._waitPoll) clearInterval(window._waitPoll);
+          startTestForStudent();
+        }
+      });
+    }
+    
+    // Check immediately, then every 500ms
+    checkTestStatus();
+    window._waitPoll = setInterval(checkTestStatus, 500);
   }
 
   // ===== TEST ENGINE =====
