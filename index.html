@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zakovat — Bilim Testlash Platformasi</title>
+ (<meta name="google-site-verification" content="..." />)
+<!-- ===== GOOGLE INTEGRATIONS ===== -->
+<!-- 🔍 Google Site Verification (Search Console) -->
+<meta name="google-site-verification" content="0gidfQ8wTrkKa7nBE8wokZ-pj7brygHVRzHDWTbFJI0" />
+
+<!-- 📊 Google Analytics — tashrif buyuruvchilarni kuzatish -->
+<!-- 🔧 Google Analytics ID olsangiz, G-XXXXXXXXXX ni o'z ID ingizga almashtiring -->
+<!-- Hozircha o'chirib qo'yiladi — ID yo'qligida xato bermaslik uchun -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+<!-- 🔎 SEO Meta Tags — Google qidiruv uchun -->
+<meta name="description" content="Zakovat — O'zbek tilidagi bilim testlash platformasi. Test tuzing, guruh yarating, real-time sinxronizatsiya bilan test topshiring. Bepul va ochiq!" />
+<meta name="keywords" content="test, savol, javob, bilim, o'qituvchi, talaba, guruh, imtihon, quiz, LMS, o'zbek, axborot tizimi" />
+<meta name="author" content="Zakovat Team" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#6c3ce0" />
+
+<!-- 📱 Open Graph — WhatsApp, Telegram, Facebook da chiroyli ko'rinish -->
+<meta property="og:title" content="Zakovat — Bilim Testlash Platformasi" />
+<meta property="og:description" content="Test tuzing, guruh yarating va bilimlaringizni tekshiring! Real-time sinxronizatsiya, turli qurilmalardan ishlaydi." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="uz_UZ" />
+
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Zakovat — Bilim Testlash Platformasi" />
+<meta name="twitter:description" content="Test tuzing, guruh yarating va bilimlaringizni tekshiring!" />
+
+<!-- 🍎 PWA / Mobile -->
+<meta name="apple-mobile-web-app-title" content="Zakovat" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiWmFrb3ZhdCAtIEJpbGltIFRlc3RsYXNoIFBsYXRmb3JtYXNpIiwic2hvcnRfbmFtZSI6Ilpha292YXQiLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBmMGExZSIsInRoZW1lX2NvbG9yIjoiIzZjM2NlMCJ9">
+
+<!-- 📋 Structured Data — Google Search rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Zakovat",
+  "description": "O'zbek tilidagi bilim testlash platformasi",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "UZS"
+  },
+  "inLanguage": "uz",
+  "browserRequirements": "Requires JavaScript"
+}
+</script>
+
+<style>
+  :root {
+    --primary: #6c3ce0;
+    --primary-light: #8b5cf6;
+    --primary-dark: #5b21b6;
+    --accent: #f59e0b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --bg: #0f0a1e;
+    --bg2: #1a1333;
+    --bg3: #251d45;
+    --text: #f1f0f5;
+    --text2: #a5a0c0;
+    --card: rgba(40,30,80,0.85);
+    --border: rgba(139,92,246,0.3);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(108,60,224,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(139,92,246,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(245,158,11,0.05) 0%, transparent 40%);
+    z-index: -1;
+    animation: bgMove 20s ease-in-out infinite alternate;
+  }
+  @keyframes bgMove {
+    0% { transform: translate(0,0) rotate(0deg); }
+    100% { transform: translate(-3%,-3%) rotate(3deg); }
+  }
+  .screen { display:none; min-height:100vh; padding:20px; }
+  .screen.active { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+
+  .btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    box-shadow: 0 4px 20px rgba(108,60,224,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(108,60,224,0.6); }
+  .btn-success {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    box-shadow: 0 4px 20px rgba(16,185,129,0.4);
+  }
+  .btn-success:hover { transform: translateY(-2px); }
+  .btn-danger {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--primary-light);
+    border: 2px solid var(--primary-light);
+  }
+  .btn-outline:hover { background: var(--primary-light); color: white; }
+  .btn-sm { padding: 8px 16px; font-size: 14px; border-radius: 8px; }
+  .btn-lg { padding: 18px 40px; font-size: 18px; }
+  .btn:disabled { opacity:0.5; cursor:not-allowed; transform:none!important; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 600px;
+  }
+  .card-wide { max-width: 900px; }
+
+  .input-group { margin-bottom: 18px; }
+  .input-group label {
+    display: block; margin-bottom: 6px; font-weight: 600;
+    color: var(--text2); font-size: 14px;
+  }
+  .input-group input, .input-group select, .input-group textarea {
+    width: 100%; padding: 12px 16px;
+    background: rgba(255,255,255,0.07); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); font-size: 15px; outline: none;
+  }
+  .input-group input:focus, .input-group textarea:focus {
+    border-color: var(--primary-light);
+  }
+  .input-group textarea { resize: vertical; min-height: 80px; }
+
+  .landing-logo { font-size: 48px; margin-bottom: 10px; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .landing-title {
+    font-size: 36px; font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--primary-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 8px; text-align: center;
+  }
+  .landing-sub { color: var(--text2); font-size: 16px; margin-bottom: 40px; text-align: center; }
+  .landing-cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    max-width: 600px; width: 100%;
+  }
+  .landing-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 30px 20px; text-align: center;
+    cursor: pointer; transition: all 0.3s; backdrop-filter: blur(20px);
+  }
+  .landing-card:hover {
+    transform: translateY(-5px); border-color: var(--primary-light);
+    box-shadow: 0 8px 40px rgba(108,60,224,0.3);
+  }
+  .landing-card .icon { font-size: 40px; margin-bottom: 12px; }
+  .landing-card h3 { font-size: 18px; margin-bottom: 6px; }
+  .landing-card p { font-size: 13px; color: var(--text2); }
+
+  .step-indicator { display:flex; gap:8px; margin-bottom:30px; justify-content:center; }
+  .step-dot { width:40px; height:6px; border-radius:3px; background:rgba(255,255,255,0.1); transition:all 0.3s; }
+  .step-dot.active { background:var(--primary-light); width:60px; }
+  .step-dot.done { background:var(--success); }
+
+  .question-item {
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px; margin-bottom: 12px; position: relative;
+  }
+  .question-item .q-num {
+    position:absolute; top:-10px; left:12px; background:var(--primary);
+    color:white; padding:2px 12px; border-radius:20px; font-size:12px; font-weight:700;
+  }
+  .option-row { display:flex; gap:8px; align-items:center; margin-bottom:6px; }
+  .option-row input[type="text"] {
+    flex:1; padding:8px 12px; background:rgba(255,255,255,0.05);
+    border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:14px; outline:none;
+  }
+  .option-row input[type="radio"] { accent-color:var(--success); width:18px; height:18px; cursor:pointer; }
+  .remove-q {
+    position:absolute; top:8px; right:8px; background:var(--danger); color:white;
+    border:none; border-radius:50%; width:24px; height:24px; font-size:14px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .file-upload {
+    border:2px dashed var(--border); border-radius:16px; padding:40px 20px;
+    text-align:center; cursor:pointer; transition:all 0.3s; margin-bottom:20px;
+  }
+  .file-upload:hover { border-color:var(--primary-light); background:rgba(139,92,246,0.05); }
+  .file-upload .upload-icon { font-size:40px; margin-bottom:10px; }
+  .file-upload p { color:var(--text2); font-size:14px; }
+  .file-upload input { display:none; }
+
+  .test-header {
+    display:flex; justify-content:space-between; align-items:center;
+    width:100%; max-width:800px; margin-bottom:20px; flex-wrap:wrap; gap:10px;
+  }
+  .test-info { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .test-badge { background:rgba(255,255,255,0.07); padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600; }
+  .timer-badge {
+    background:rgba(239,68,68,0.2); color:#fca5a5; padding:6px 14px;
+    border-radius:20px; font-size:13px; font-weight:700;
+  }
+  .timer-badge.safe { background:rgba(16,185,129,0.2); color:#6ee7b7; }
+  .timer-badge.warning { background:rgba(245,158,11,0.2); color:#fcd34d; }
+
+  .progress-wrap { width:100%; max-width:800px; margin-bottom:20px; }
+  .progress-bar { width:100%; height:8px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden; }
+  .progress-fill { height:100%; background:linear-gradient(90deg,var(--primary),var(--primary-light)); border-radius:4px; transition:width 0.5s ease; }
+  .progress-text { text-align:center; font-size:13px; color:var(--text2); margin-top:4px; }
+
+  .question-card {
+    background:var(--card); border:1px solid var(--border); border-radius:20px;
+    padding:30px; width:100%; max-width:800px; backdrop-filter:blur(20px);
+  }
+  .question-text { font-size:18px; font-weight:600; margin-bottom:24px; line-height:1.6; }
+  .options-list { display:flex; flex-direction:column; gap:12px; }
+  .option-btn {
+    display:flex; align-items:center; gap:14px; padding:14px 18px;
+    background:rgba(255,255,255,0.05); border:2px solid rgba(255,255,255,0.1);
+    border-radius:12px; cursor:pointer; transition:all 0.3s; font-size:15px;
+    color:var(--text); text-align:left; width:100%;
+  }
+  .option-btn:hover:not(.disabled) { border-color:var(--primary-light); background:rgba(139,92,246,0.1); }
+  .option-btn .opt-letter {
+    width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center; font-weight:700;
+    font-size:14px; flex-shrink:0; transition:all 0.3s;
+  }
+  .option-btn.correct { border-color:var(--success); background:rgba(16,185,129,0.15); }
+  .option-btn.correct .opt-letter { background:var(--success); color:white; }
+  .option-btn.wrong { border-color:var(--danger); background:rgba(239,68,68,0.15); }
+  .option-btn.wrong .opt-letter { background:var(--danger); color:white; }
+  .option-btn.disabled { cursor:default; pointer-events:none; }
+  .option-btn.show-correct { border-color:var(--success); background:rgba(16,185,129,0.1); }
+
+  .wrong-msg {
+    margin-top:16px; padding:12px 18px; background:rgba(239,68,68,0.15);
+    border:1px solid rgba(239,68,68,0.3); border-radius:10px;
+    color:#fca5a5; font-weight:600; text-align:center;
+    animation: shake 0.5s ease-in-out;
+  }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-10px)} 75%{transform:translateX(10px)} }
+
+  .result-circle {
+    width:180px; height:180px; border-radius:50%; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; margin:0 auto 24px; position:relative;
+  }
+  .result-circle::before {
+    content:''; position:absolute; inset:-4px; border-radius:50%; padding:4px;
+    background: conic-gradient(var(--success) var(--pct), rgba(255,255,255,0.1) var(--pct));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .result-circle .score-num { font-size:48px; font-weight:800; }
+  .result-circle .score-label { font-size:14px; color:var(--text2); }
+
+  .waiting-room { text-align:center; }
+  .waiting-spinner {
+    width:50px; height:50px; border:4px solid rgba(255,255,255,0.1);
+    border-top-color:var(--primary-light); border-radius:50%;
+    animation:spin 1s linear infinite; margin:0 auto 20px;
+  }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .members-list { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px; }
+  .member-chip { background:rgba(139,92,246,0.2); border:1px solid rgba(139,92,246,0.3); padding:6px 14px; border-radius:20px; font-size:13px; }
+
+  .question-nav { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-top:20px; max-width:800px; }
+  .q-dot {
+    width:32px; height:32px; border-radius:8px; border:1px solid var(--border);
+    background:rgba(255,255,255,0.05); color:var(--text2); font-size:12px;
+    font-weight:600; cursor:pointer; display:flex; align-items:center;
+    justify-content:center; transition:all 0.3s;
+  }
+  .q-dot.current { border-color:var(--primary-light); background:rgba(139,92,246,0.2); color:white; }
+  .q-dot.answered { background:rgba(16,185,129,0.2); border-color:var(--success); color:#6ee7b7; }
+  .q-dot:hover { border-color:var(--primary-light); }
+
+  .toast {
+    position:fixed; top:20px; right:20px; padding:14px 24px; border-radius:12px;
+    color:white; font-weight:600; z-index:9999; transform:translateX(120%); transition:transform 0.4s ease;
+  }
+  .toast.show { transform:translateX(0); }
+  .toast.success { background:var(--success); }
+  .toast.error { background:var(--danger); }
+  .toast.info { background:var(--primary); }
+
+  .modal-overlay {
+    position:fixed; inset:0; background:rgba(0,0,0,0.7); display:flex;
+    align-items:center; justify-content:center; z-index:1000;
+    opacity:0; pointer-events:none; transition:opacity 0.3s;
+  }
+  .modal-overlay.show { opacity:1; pointer-events:auto; }
+  .modal {
+    background:var(--bg2); border:1px solid var(--border); border-radius:20px;
+    padding:30px; max-width:500px; width:90%; transform:scale(0.9); transition:transform 0.3s;
+  }
+  .modal-overlay.show .modal { transform:scale(1); }
+
+  .tab-bar { display:flex; gap:4px; background:rgba(255,255,255,0.05); border-radius:12px; padding:4px; margin-bottom:20px; }
+  .tab-btn {
+    flex:1; padding:10px 16px; border:none; border-radius:10px; background:transparent;
+    color:var(--text2); font-weight:600; font-size:14px; cursor:pointer; transition:all 0.3s;
+  }
+  .tab-btn.active { background:var(--primary); color:white; }
+
+  .credential-box {
+    background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3);
+    border-radius:12px; padding:20px; text-align:center; margin:16px 0;
+  }
+  .credential-box .cred-label { font-size:12px; color:var(--text2); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+  .credential-box .cred-value { font-size:22px; font-weight:800; color:#6ee7b7; font-family:monospace; letter-spacing:3px; }
+
+  .test-list-item {
+    display:flex; justify-content:space-between; align-items:center; padding:14px 18px;
+    background:rgba(255,255,255,0.05); border:1px solid var(--border); border-radius:12px;
+    margin-bottom:10px; cursor:pointer; transition:all 0.3s;
+  }
+  .test-list-item:hover { border-color:var(--primary-light); background:rgba(139,92,246,0.1); }
+
+  .confetti-container { position:fixed; inset:0; pointer-events:none; z-index:999; overflow:hidden; }
+  .confetti-piece { position:absolute; width:10px; height:10px; top:-20px; animation:confettiFall 3s ease-out forwards; }
+  @keyframes confettiFall { 0%{transform:translateY(0) rotate(0deg);opacity:1} 100%{transform:translateY(100vh) rotate(720deg);opacity:0} }
+
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:rgba(139,92,246,0.3); border-radius:3px; }
+
+  @media(max-width:640px) {
+    .landing-title { font-size:26px; }
+    .landing-cards { grid-template-columns:1fr; }
+    .question-text { font-size:16px; }
+    .card { padding:20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<!-- ============ LANDING SCREEN ============ -->
+<div id="landingScreen" class="screen active">
+  <div class="landing-logo">🧠</div>
+  <h1 class="landing-title">Zakovat</h1>
+  <p class="landing-sub">Bilim testlash platformasi — Test tuzing, guruh yarating va bilimlaringizni tekshiring</p>
+  <div class="landing-cards">
+    <div class="landing-card" id="btnTeacher">
+      <div class="icon">👨‍🏫</div>
+      <h3>Test tuzish</h3>
+      <p>O'qituvchi paneli — test yarating va guruh boshqaring</p>
+    </div>
+    <div class="landing-card" id="btnStudent">
+      <div class="icon">🎓</div>
+      <h3>Test topshirish</h3>
+      <p>Talaba paneli — guruhga kiring va test boshlang</p>
+    </div>
+  </div>
+  <div style="margin-top:24px;max-width:600px;width:100%;padding:16px;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.15);border-radius:12px;text-align:center">
+    <p style="font-size:13px;color:var(--text2);line-height:1.6">
+      💡 <strong style="color:var(--primary-light)">Guruh testi</strong> — Turli qurilmalardan real-time sinxron! O'qituvchi test yarating, talabalar login/parol bilan kiring. O'qituvchi "Boshlash" bossa, hamyonkasib barcha talabalar testni bir vaqtda boshlaydi! Hech qanday sozlash kerak emas — avtomatik ishlaydi!
+    </p>
+    <div id="firebaseStatus" style="margin-top:10px;font-size:12px;padding:6px 12px;border-radius:8px;display:inline-block"></div>
+  </div>
+</div>
+
+<!-- ============ TEACHER SCREEN ============ -->
+<div id="teacherScreen" class="screen">
+  <div class="card card-wide" style="max-width:800px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h2 style="font-size:22px">👨‍🏫 Test tuzish paneli</h2>
+      <button class="btn btn-outline btn-sm" id="btnTeacherBack">← Orqaga</button>
+    </div>
+
+    <div class="step-indicator" id="stepIndicator">
+      <div class="step-dot active" id="step1dot"></div>
+      <div class="step-dot" id="step2dot"></div>
+      <div class="step-dot" id="step3dot"></div>
+    </div>
+
+    <!-- Step 1 -->
+    <div id="teacherStep1">
+      <div class="input-group">
+        <label>Test nomi</label>
+        <input type="text" id="testName" placeholder="Masalan: Axborot Tizimi - 1-midterm">
+      </div>
+      <div class="input-group">
+        <label>Vaqt (soniyada, har bir savol uchun)</label>
+        <input type="number" id="questionTime" value="30" min="10" max="300">
+      </div>
+
+      <div class="tab-bar" id="uploadTabBar">
+        <button class="tab-btn active" data-tab="file">📄 Fayl yuklash</button>
+        <button class="tab-btn" data-tab="manual">✏️ Qo'lda kiritish</button>
+      </div>
+
+      <div id="fileUploadTab">
+        <div class="file-upload" id="fileUploadArea">
+          <div class="upload-icon">📁</div>
+          <p>Word (.docx) yoki PDF faylni bu yerga tashlang<br>yoki bosing va tanlang</p>
+          <p style="margin-top:8px;font-size:12px;color:var(--primary-light)">Format: Savol → A) variant → B) variant → C) variant → D) variant → To'g'ri javob: A/B/C/D</p>
+          <input type="file" id="fileInput" accept=".pdf,.docx">
+        </div>
+        <div id="parseStatus" style="text-align:center;color:var(--text2);font-size:14px;display:none">
+          <div class="waiting-spinner" style="width:30px;height:30px;margin:0 auto 10px"></div>
+          Fayl tahlil qilinmoqda...
+        </div>
+      </div>
+
+      <div id="manualTab" style="display:none">
+        <p style="color:var(--text2);font-size:14px;margin-bottom:12px">Quyidagi formatda savollarni kiriting:</p>
+        <textarea id="manualInput" rows="12" placeholder="1. Savol matni
+A) Birinchi variant
+B) Ikkinchi variant
+C) Uchinchi variant
+D) To'rtinchi variant
+To'g'ri javob: A
+
+2. Yana savol matni
+A) variant
+B) variant
+C) variant
+D) variant
+To'g'ri javob: B"></textarea>
+        <button class="btn btn-primary btn-sm" style="margin-top:10px" id="btnParseManual">Tahlil qilish</button>
+      </div>
+
+      <div id="parsedInfo" style="display:none;text-align:center;margin-top:16px;padding:16px;background:rgba(16,185,129,0.1);border-radius:12px">
+        <p style="color:#6ee7b7;font-weight:700" id="parsedCount"></p>
+      </div>
+
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px">
+        <button class="btn btn-outline btn-sm" id="btnLoadDefault">📚 Standart 100 savolni yuklash</button>
+        <button class="btn btn-primary" id="btnToStep2" disabled>Keyingi →</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="teacherStep2" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <h3>Savollarni tahrirlash</h3>
+        <button class="btn btn-success btn-sm" id="btnAddQuestion">+ Savol qo'shish</button>
+      </div>
+      <div id="questionsEditor" style="max-height:500px;overflow-y:auto;padding-right:8px"></div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px">
+        <button class="btn btn-outline" id="btnBackToStep1">← Orqaga</button>
+        <button class="btn btn-primary" id="btnToStep3">Keyingi →</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="teacherStep3" style="display:none">
+      <h3 style="margin-bottom:16px;text-align:center">Guruh sozlamalari</h3>
+      <div class="input-group">
+        <label>Guruh nomi</label>
+        <input type="text" id="groupName" placeholder="Masalan: TATU-2024-G1">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="input-group">
+          <label>Group login</label>
+          <input type="text" id="groupLogin" placeholder="Avtomatik generatsiya">
+        </div>
+        <div class="input-group">
+          <label>Group parol</label>
+          <input type="text" id="groupPassword" placeholder="Avtomatik generatsiya">
+        </div>
+      </div>
+      <div style="text-align:center;margin:12px 0">
+        <button class="btn btn-outline btn-sm" id="btnGenCreds">🔑 Login/Parol generatsiya</button>
+      </div>
+      <div class="input-group">
+        <label>Boshlash uslubi</label>
+        <select id="startMode">
+          <option value="any">Ixtiyoriy (Har kim o'zi boshlaydi)</option>
+          <option value="group">Guruh bilan birga (O'qituvchi boshlaydi)</option>
+          <option value="both">Ikkalasi (Talaba tanlaydi)</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:20px">
+        <button class="btn btn-outline" id="btnBackToStep2">← Orqaga</button>
+        <button class="btn btn-success btn-lg" id="btnCreateTest">✅ Testni yaratish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STUDENT LOGIN SCREEN ============ -->
+<div id="studentLoginScreen" class="screen">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h2 style="font-size:22px">🎓 Test topshirish</h2>
+      <button class="btn btn-outline btn-sm" id="btnStudentBack">← Orqaga</button>
+    </div>
+    <div id="availableTests" style="margin-bottom:20px">
+      <p style="color:var(--text2);font-size:14px;margin-bottom:10px">Mavjud testlar:</p>
+      <div id="testList"></div>
+      <div style="margin-top:10px;display:flex;gap:8px;">
+        <button class="btn btn-outline btn-sm" id="btnImportTest">📥 Test import qilish</button>
+      </div>
+    </div>
+    <div class="input-group">
+      <label>Ism va Familiyangiz</label>
+      <input type="text" id="studentName" placeholder="Masalan: Ali Valiyev">
+    </div>
+    <div class="input-group">
+      <label>Guruh login</label>
+      <input type="text" id="studentLogin" placeholder="O'qituvchi bergan login">
+    </div>
+    <div class="input-group">
+      <label>Guruh parol</label>
+      <input type="password" id="studentPassword" placeholder="O'qituvchi bergan parol">
+    </div>
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:10px" id="btnStudentLogin">Kirish</button>
+  </div>
+</div>
+
+<!-- ============ STUDENT WAIT SCREEN ============ -->
+<div id="studentWaitScreen" class="screen">
+  <div class="card waiting-room">
+    <div class="waiting-spinner"></div>
+    <h2 style="margin-bottom:8px">Kuting...</h2>
+    <p style="color:var(--text2);margin-bottom:16px">O'qituvchi testni boshlashini kuting</p>
+    <div id="waitTestInfo" style="margin-bottom:16px"></div>
+    <div id="groupMembers" class="members-list"></div>
+    <p style="color:var(--text2);font-size:13px;margin-top:16px" id="waitCount"></p>
+  </div>
+</div>
+
+<!-- ============ TEACHER CONTROL SCREEN ============ -->
+<div id="teacherControlScreen" class="screen">
+  <div class="card card-wide">
+    <h2 style="text-align:center;margin-bottom:16px">🎮 Guruh boshqaruvi</h2>
+    <div id="controlTestInfo" style="text-align:center;margin-bottom:16px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+      <div style="text-align:center;padding:20px;background:rgba(139,92,246,0.1);border-radius:12px">
+        <div style="font-size:32px;font-weight:800" id="connectedCount">0</div>
+        <div style="color:var(--text2);font-size:13px">Ulangan talabalar</div>
+      </div>
+      <div style="text-align:center;padding:20px;background:rgba(16,185,129,0.1);border-radius:12px">
+        <div style="font-size:32px;font-weight:800" id="finishedCount">0</div>
+        <div style="color:var(--text2);font-size:13px">Tugatgan talabalar</div>
+      </div>
+    </div>
+    <div id="connectedMembers" class="members-list" style="margin-bottom:20px"></div>
+    <div id="resultsTable" style="display:none;margin-bottom:20px"></div>
+    <div style="display:flex;gap:10px;justify-content:center">
+      <button class="btn btn-success btn-lg" id="startGroupBtn">🚀 Testni boshlash</button>
+      <button class="btn btn-outline btn-sm" id="btnExportTest">📋 Eksport</button>
+      <button class="btn btn-outline" id="btnControlHome">Bosh sahifa</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TEST SCREEN ============ -->
+<div id="testScreen" class="screen">
+  <div class="test-header">
+    <div class="test-info">
+      <span class="test-badge" id="testTitleBadge"></span>
+      <span class="test-badge" id="questionBadge"></span>
+    </div>
+    <span class="timer-badge" id="timerBadge">00:30</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="progress-text" id="progressText">0 / 0</div>
+  </div>
+  <div class="question-card">
+    <div class="question-text" id="questionText"></div>
+    <div class="options-list" id="optionsList"></div>
+    <div id="wrongMessage" style="display:none"></div>
+  </div>
+  <div class="question-nav" id="questionNav"></div>
+  <div style="margin-top:20px;text-align:center">
+    <button class="btn btn-danger btn-sm" id="btnFinishTest" style="display:none">🏁 Testni yakunlash</button>
+  </div>
+</div>
+
+<!-- ============ RESULT SCREEN ============ -->
+<div id="resultScreen" class="screen">
+  <div class="card" style="text-align:center">
+    <h2 style="margin-bottom:20px">📊 Natijalar</h2>
+    <div class="result-circle" id="resultCircle">
+      <div class="score-num" id="scoreNum">0</div>
+      <div class="score-label">to'g'ri javob</div>
+    </div>
+    <p style="font-size:18px;margin-bottom:4px" id="resultName"></p>
+    <p style="color:var(--text2);margin-bottom:20px" id="resultGroup"></p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+      <div style="padding:12px;background:rgba(16,185,129,0.1);border-radius:10px">
+        <div style="font-size:24px;font-weight:800;color:#6ee7b7" id="correctCount">0</div>
+        <div style="font-size:12px;color:var(--text2)">To'g'ri</div>
+      </div>
+      <div style="padding:12px;background:rgba(239,68,68,0.1);border-radius:10px">
+        <div style="font-size:24px;font-weight:800;color:#fca5a5" id="wrongCount">0</div>
+        <div style="font-size:12px;color:var(--text2)">Xato</div>
+      </div>
+      <div style="padding:12px;background:rgba(139,92,246,0.1);border-radius:10px">
+        <div style="font-size:24px;font-weight:800;color:#c4b5fd" id="totalQuestions">0</div>
+        <div style="font-size:12px;color:var(--text2)">Savollar</div>
+      </div>
+    </div>
+    <div style="margin-bottom:20px">
+      <p style="color:var(--text2);font-size:14px">Sarflangan vaqt: <strong id="timeSpent">0:00</strong></p>
+    </div>
+    <button class="btn btn-primary btn-lg" id="btnResultHome">🏠 Bosh sahifa</button>
+  </div>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<!-- External libs loaded AFTER all HTML, with fallbacks -->
+<script>
+// Load external libraries dynamically
+var _pdfLibReady = false;
+var _mammothLibReady = false;
+
+function loadScript(url, onLoad, onError) {
+  var s = document.createElement('script');
+  s.src = url;
+  s.onload = onLoad;
+  s.onerror = onError;
+  document.head.appendChild(s);
+}
+
+loadScript(
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+  function() {
+    _pdfLibReady = true;
+    loadScript(
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+      function() {
+        try { pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; } catch(e) {}
+      },
+      function() {}
+    );
+  },
+  function() { console.warn('pdf.js yuklanmadi'); }
+);
+
+loadScript(
+  'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
+  function() { _mammothLibReady = true; },
+  function() { console.warn('mammoth.js yuklanmadi'); }
+);
+
+// ===== GUN.JS — REAL-TIME DATABASE (zero config!) =====
+// Gun.js yuklanmasa ham sayt ishlaydi — localStorage ga tayanadi
+var _gunLoadTimeout = setTimeout(function() {
+  // Gun 5 soniyada yuklanmasa, offline rejimga o't
+  if (!window._gunLibReady) {
+    console.warn('Gun.js yuklanmadi — offline rejim faol');
+    try { updateSyncStatus('offline'); } catch(e) {}
+  }
+}, 5000);
+
+loadScript(
+  'https://cdn.jsdelivr.net/npm/gun/gun.js',
+  function() {
+    clearTimeout(_gunLoadTimeout);
+    try {
+      window._gunLibReady = true;
+      initGunSync();
+    } catch(e) {
+      console.warn('Gun.js ishga tushirishda xatolik:', e);
+      try { updateSyncStatus('offline'); } catch(e2) {}
+    }
+  },
+  function() {
+    clearTimeout(_gunLoadTimeout);
+    console.warn('Gun.js yuklanmadi — offline rejim');
+    try { updateSyncStatus('offline'); } catch(e) {}
+  }
+);
+</script>
+
+<!-- ============ MAIN APP SCRIPT ============ -->
+<script>
+(function() {
+  "use strict";
+
+  // ===== STATE =====
+  var currentTest = null;
+  var parsedQuestions = [];
+  var editingQuestions = [];
+  var currentStep = 1;
+  var studentSession = null;
+  var testState = null;
+  var timerInterval = null;
+
+  // ===== HELPERS =====
+  function showScreen(id) {
+    var screens = document.querySelectorAll('.screen');
+    for (var i = 0; i < screens.length; i++) {
+      screens[i].classList.remove('active');
+    }
+    document.getElementById(id).classList.add('active');
+    if (id === 'studentLoginScreen') renderTestList();
+  }
+
+  function showToast(msg, type) {
+    type = type || 'info';
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast ' + type + ' show';
+    setTimeout(function() { t.classList.remove('show'); }, 3000);
+  }
+
+  function showModal(html) {
+    document.getElementById('modalContent').innerHTML = html;
+    document.getElementById('modalOverlay').classList.add('show');
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('show');
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function generateId(len) {
+    len = len || 6;
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var r = '';
+    for (var i = 0; i < len; i++) r += chars[Math.floor(Math.random()*chars.length)];
+    return r;
+  }
+
+  function generatePassword(len) {
+    len = len || 8;
+    var chars = 'abcdefghijkmnpqrstuvwxyz23456789';
+    var r = '';
+    for (var i = 0; i < len; i++) r += chars[Math.floor(Math.random()*chars.length)];
+    return r;
+  }
+
+  function shuffleArray(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random()*(i+1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  // ===== GUN.JS REAL-TIME SYNC =====
+  var _gun = null;
+  var _gunReady = false;
+  var _gunTestsRef = null;
+
+  // Initialize Gun.js when library loads
+  window.initGunSync = function() {
+    try {
+      if (typeof Gun === 'undefined') {
+        console.warn('Gun mavjud emas — offline rejim');
+        updateSyncStatus('offline');
+        return;
+      }
+
+      // Gun with localStorage false (we handle it ourselves)
+      // If relay servers are down, Gun still works locally
+      _gun = Gun({ localStorage: false });
+      _gunReady = true;
+      _gunTestsRef = _gun.get('zakovat_tests');
+
+      console.log('✅ Gun.js ishga tushdi! Real-time sinxronizatsiya faol.');
+      updateSyncStatus('connected');
+
+      // Try to connect to relay peers for cross-device sync
+      try {
+        _gun.on('hi', function() {
+          updateSyncStatus('connected');
+        });
+        _gun.on('bye', function() {
+          updateSyncStatus('offline');
+        });
+      } catch(e) {}
+
+      // Listen for real-time changes
+      setupGunListeners();
+    } catch(e) {
+      console.warn('Gun.js ishga tushirishda xatolik:', e.message);
+      updateSyncStatus('offline');
+    }
+  };
+
+  function setupGunListeners() {
+    if (!_gunTestsRef || !_gunReady) return;
+
+    try {
+      // Listen for any test changes in real-time
+      _gunTestsRef.on(function(data) {
+        if (!data) return;
+        try {
+          // Convert Gun object to array (remove Gun internal fields)
+          var tests = gunDataToArray(data);
+          if (tests.length === 0) return; // Don't overwrite with empty
+          // Save to localStorage as backup
+          try { localStorage.setItem('at_tests', JSON.stringify(tests)); } catch(e) {}
+          // Update memory cache
+          delete _memoryStore['at_tests'];
+          // Refresh UI
+          handleDataSync('at_tests');
+        } catch(e) {
+          console.warn('Gun.js ma\'lumotlarni o\'qishda xatolik:', e);
+        }
+      });
+    } catch(e) {
+      console.warn('Gun.js listener o\'rnatishda xatolik:', e);
+    }
+  }
+
+  // Convert Gun.js data to array (removes _ meta fields)
+  function gunDataToArray(data) {
+    var arr = [];
+    var keys = Object.keys(data);
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      if (k === '_' || k.charAt(0) === '_') continue; // Skip Gun internal
+      var item = data[k];
+      if (item && typeof item === 'object' && item.id) {
+        // Deep clean — remove Gun internal refs
+        arr.push(cleanGunObject(item));
+      }
+    }
+    return arr;
+  }
+
+  // Remove Gun.js internal properties recursively
+  function cleanGunObject(obj) {
+    if (!obj || typeof obj !== 'object') return obj;
+    var clean = {};
+    var keys = Object.keys(obj);
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      if (k === '_') continue; // Skip Gun internal
+      var val = obj[k];
+      if (val && typeof val === 'object' && !Array.isArray(val)) {
+        // Check if it's a Gun reference (has # property)
+        if (val['#']) {
+          // This is a Gun reference — skip it, data will come via the path
+          continue;
+        }
+        clean[k] = cleanGunObject(val);
+      } else if (Array.isArray(val)) {
+        clean[k] = val;
+      } else {
+        clean[k] = val;
+      }
+    }
+    return clean;
+  }
+
+  function updateSyncStatus(status) {
+    var el = document.getElementById('firebaseStatus');
+    if (!el) return;
+    if (status === 'connected') {
+      el.style.background = 'rgba(16,185,129,0.15)';
+      el.style.color = '#6ee7b7';
+      el.textContent = '🌐 Real-time: Ulangan (Turli qurilmalardan ishlaydi!)';
+    } else if (status === 'offline') {
+      el.style.background = 'rgba(239,68,68,0.15)';
+      el.style.color = '#fca5a5';
+      el.textContent = '⚠️ Offline rejim (Faqat bitta brauzerda ishlaydi)';
+    } else {
+      el.style.background = 'rgba(245,158,11,0.15)';
+      el.style.color = '#fcd34d';
+      el.textContent = '⏳ Ulanmoqda...';
+    }
+  }
+
+  // ===== STORAGE WITH FALLBACK (Gun.js + localStorage) =====
+  var _memoryStore = {};
+  var _storageWorks = null;
+
+  // BroadcastChannel for same-browser tab sync
+  var _bc = null;
+  try { _bc = new BroadcastChannel('zakovat_sync'); } catch(e) {}
+
+  function storageSet(key, value) {
+    _memoryStore[key] = value;
+    try { localStorage.setItem(key, value); _storageWorks = true; } catch(e) { _storageWorks = false; }
+    if (_bc) { try { _bc.postMessage({ key: key, action: 'update' }); } catch(e) {} }
+  }
+
+  function storageGet(key) {
+    if (_memoryStore[key] !== undefined) return _memoryStore[key];
+    try {
+      var val = localStorage.getItem(key);
+      if (val !== null) { _memoryStore[key] = val; return val; }
+    } catch(e) { _storageWorks = false; }
+    return null;
+  }
+
+  // Listen for localStorage changes from OTHER tabs
+  window.addEventListener('storage', function(e) {
+    if (e.key) {
+      _memoryStore[e.key] = e.newValue;
+      handleDataSync(e.key);
+    }
+  });
+
+  // Listen for BroadcastChannel
+  if (_bc) {
+    _bc.onmessage = function(e) {
+      if (e.data && e.data.key) {
+        delete _memoryStore[e.data.key];
+        handleDataSync(e.data.key);
+      }
+    };
+  }
+
+  // ===== GUN-AWARE getTests / saveTests =====
+  function getTests() {
+    try {
+      var data = storageGet('at_tests');
+      if (data) return JSON.parse(data);
+    } catch(e) {}
+    return [];
+  }
+
+  function saveTests(tests) {
+    // Save to localStorage (fast, always works — PRIMARY storage)
+    try { storageSet('at_tests', JSON.stringify(tests)); } catch(e) {
+      console.warn('localStorage ga yozishda xatolik:', e);
+    }
+
+    // Try to save to Gun.js for real-time sync (SECONDARY)
+    if (_gunReady && _gunTestsRef) {
+      try {
+        for (var i = 0; i < tests.length; i++) {
+          // Deep clone to avoid Gun.js mutating our objects
+          var testCopy = JSON.parse(JSON.stringify(tests[i]));
+          _gunTestsRef.get(tests[i].id).put(testCopy);
+        }
+      } catch(e) {
+        // Gun.js xato bersa — localStorage ishlayveradi, muammo yo'q
+        console.warn('Gun.js ga yozishda xatolik (offline rejim):', e.message);
+      }
+    }
+  }
+
+  // Update a single test in Gun.js (efficient)
+  function updateTestInCloud(test) {
+    if (_gunReady && _gunTestsRef && test && test.id) {
+      try {
+        var testCopy = JSON.parse(JSON.stringify(test));
+        _gunTestsRef.get(test.id).put(testCopy);
+      } catch(e) {
+        console.warn('Gun.js yangilashda xatolik:', e.message);
+      }
+    }
+  }
+
+  // Save result to cloud
+  function saveResultToCloud(testId, result) {
+    if (_gunReady && _gunTestsRef) {
+      try {
+        var copy = JSON.parse(JSON.stringify(result));
+        _gunTestsRef.get(testId).get('results').get(Date.now().toString()).put(copy);
+      } catch(e) {
+        console.warn('Gun.js natija saqlashda xatolik:', e.message);
+      }
+    }
+  }
+
+  function getTestById(id) {
+    var tests = getTests();
+    for (var i = 0; i < tests.length; i++) {
+      if (tests[i].id === id) return tests[i];
+    }
+    return null;
+  }
+
+  // Handle data sync — refresh UI when data changes
+  function handleDataSync(key) {
+    if (key === 'at_tests') {
+      // If on teacher control screen, refresh
+      if (document.getElementById('teacherControlScreen').classList.contains('active') && currentTest) {
+        updateTeacherControl(currentTest.id);
+      }
+      // If on student waiting screen, refresh
+      if (document.getElementById('studentWaitScreen').classList.contains('active') && currentTest) {
+        var test = getTestById(currentTest.id);
+        if (test) {
+          var members = test.connectedStudents || [];
+          var mhtml = '';
+          for (var i = 0; i < members.length; i++) mhtml += '<div class="member-chip">👤 ' + escHtml(members[i].name) + '</div>';
+          document.getElementById('groupMembers').innerHTML = mhtml;
+          document.getElementById('waitCount').textContent = members.length + ' talaba ulangan';
+          // If teacher started the test, begin!
+          if (test.groupStarted) {
+            if (window._waitPoll) clearInterval(window._waitPoll);
+            startTestForStudent();
+          }
+        }
+      }
+      // If on student login screen, refresh test list
+      if (document.getElementById('studentLoginScreen').classList.contains('active')) {
+        renderTestList();
+      }
+    }
+  }
+
+  // ===== EVENT BINDING =====
+  // Landing
+  document.getElementById('btnTeacher').addEventListener('click', function() { showScreen('teacherScreen'); });
+  document.getElementById('btnStudent').addEventListener('click', function() { showScreen('studentLoginScreen'); });
+
+  // Teacher
+  document.getElementById('btnTeacherBack').addEventListener('click', function() { showScreen('landingScreen'); });
+  document.getElementById('btnToStep2').addEventListener('click', goToStep2);
+  document.getElementById('btnLoadDefault').addEventListener('click', loadDefaultQuestions);
+  document.getElementById('btnParseManual').addEventListener('click', parseManualInput);
+  document.getElementById('btnAddQuestion').addEventListener('click', addNewQuestion);
+  document.getElementById('btnBackToStep1').addEventListener('click', goToStep1);
+  document.getElementById('btnToStep3').addEventListener('click', goToStep3);
+  document.getElementById('btnGenCreds').addEventListener('click', generateCredentials);
+  document.getElementById('btnBackToStep2').addEventListener('click', goToStep2From3);
+  document.getElementById('btnCreateTest').addEventListener('click', createTest);
+
+  // Student
+  document.getElementById('btnStudentBack').addEventListener('click', function() { showScreen('landingScreen'); });
+  document.getElementById('btnStudentLogin').addEventListener('click', studentLoginFn);
+  document.getElementById('btnImportTest').addEventListener('click', promptImportTest);
+
+  // Teacher control
+  document.getElementById('startGroupBtn').addEventListener('click', startGroupTest);
+  document.getElementById('btnControlHome').addEventListener('click', function() { showScreen('landingScreen'); });
+  document.getElementById('btnExportTest').addEventListener('click', function() { if (currentTest) exportTestToClipboard(currentTest.id); else showToast('Export uchun test oching', 'error'); });
+
+  // Finish test button
+  document.getElementById('btnFinishTest').addEventListener('click', function() {
+    showModal(
+      '<h3 style="text-align:center;margin-bottom:12px">🏁 Testni yakunlash</h3>' +
+      '<p style="text-align:center;color:var(--text2);margin-bottom:16px">Haqiqatan ham testni yakunlamoqchimisiz?</p>' +
+      '<p style="text-align:center;color:#fca5a5;font-size:14px;margin-bottom:20px">Javob berilmagan savollar xato hisoblanadi!</p>' +
+      '<div style="display:flex;gap:10px;justify-content:center">' +
+      '<button class="btn btn-outline btn-sm" onclick="document.getElementById(\'modalOverlay\').classList.remove(\'show\')">Bekor qilish</button>' +
+      '<button class="btn btn-danger btn-sm" id="btnConfirmFinish">Ha, yakunlash</button>' +
+      '</div>'
+    );
+    document.getElementById('btnConfirmFinish').addEventListener('click', function() {
+      closeModal();
+      finishTest();
+    });
+  });
+
+  // Result
+  document.getElementById('btnResultHome').addEventListener('click', function() { showScreen('landingScreen'); });
+
+  // Modal close on overlay click
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Tab switching
+  document.getElementById('uploadTabBar').addEventListener('click', function(e) {
+    var btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    var tab = btn.getAttribute('data-tab');
+    var btns = this.querySelectorAll('.tab-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+    btn.classList.add('active');
+    document.getElementById('fileUploadTab').style.display = tab === 'file' ? 'block' : 'none';
+    document.getElementById('manualTab').style.display = tab === 'manual' ? 'block' : 'none';
+  });
+
+  // File upload
+  document.getElementById('fileUploadArea').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+  });
+  document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+
+  // Drag and drop
+  var fu = document.getElementById('fileUploadArea');
+  fu.addEventListener('dragover', function(e) { e.preventDefault(); this.style.borderColor='var(--primary-light)'; });
+  fu.addEventListener('dragleave', function() { this.style.borderColor=''; });
+  fu.addEventListener('drop', function(e) {
+    e.preventDefault(); this.style.borderColor='';
+    if (e.dataTransfer.files.length) {
+      document.getElementById('fileInput').files = e.dataTransfer.files;
+      handleFileUpload();
+    }
+  });
+
+  // ===== FILE UPLOAD & PARSING =====
+  function handleFileUpload() {
+    var fileInput = document.getElementById('fileInput');
+    var file = fileInput.files[0];
+    if (!file) return;
+    document.getElementById('parseStatus').style.display = 'block';
+
+    if (file.name.endsWith('.pdf')) {
+      if (!_pdfLibReady) {
+        document.getElementById('parseStatus').style.display = 'none';
+        showToast('PDF kutubxonasi yuklanmadi. Internetni tekshiring yoki DOCX dan foydalaning', 'error');
+        return;
+      }
+      parsePDFFile(file);
+    } else if (file.name.endsWith('.docx')) {
+      if (!_mammothLibReady) {
+        document.getElementById('parseStatus').style.display = 'none';
+        showToast('DOCX kutubxonasi yuklanmadi. Internetni tekshiring', 'error');
+        return;
+      }
+      parseDOCXFile(file);
+    } else {
+      document.getElementById('parseStatus').style.display = 'none';
+      showToast('Faqat PDF va DOCX format qo\'llab-quvvatlanadi', 'error');
+    }
+  }
+
+  function parsePDFFile(file) {
+    file.arrayBuffer().then(function(arrayBuffer) {
+      return pdfjsLib.getDocument({data: arrayBuffer}).promise;
+    }).then(function(pdf) {
+      var text = '';
+      var promises = [];
+      for (var i = 1; i <= pdf.numPages; i++) {
+        (function(pageNum) {
+          promises.push(
+            pdf.getPage(pageNum).then(function(page) {
+              return page.getTextContent();
+            }).then(function(content) {
+              text += content.items.map(function(item) { return item.str; }).join(' ') + '\n';
+            })
+          );
+        })(i);
+      }
+      return Promise.all(promises).then(function() { return text; });
+    }).then(function(text) {
+      finishParsing(text);
+    }).catch(function(err) {
+      document.getElementById('parseStatus').style.display = 'none';
+      showToast('PDF o\'qishda xatolik: ' + err.message, 'error');
+    });
+  }
+
+  function parseDOCXFile(file) {
+    file.arrayBuffer().then(function(arrayBuffer) {
+      return mammoth.extractRawText({arrayBuffer: arrayBuffer});
+    }).then(function(result) {
+      finishParsing(result.value);
+    }).catch(function(err) {
+      document.getElementById('parseStatus').style.display = 'none';
+      showToast('DOCX o\'qishda xatolik: ' + err.message, 'error');
+    });
+  }
+
+  function finishParsing(text) {
+    parsedQuestions = parseQuestionsFromText(text);
+    document.getElementById('parseStatus').style.display = 'none';
+    if (parsedQuestions.length > 0) {
+      document.getElementById('parsedInfo').style.display = 'block';
+      document.getElementById('parsedCount').textContent = '✅ ' + parsedQuestions.length + ' ta savol topildi!';
+      document.getElementById('btnToStep2').disabled = false;
+      showToast(parsedQuestions.length + ' ta savol topildi!', 'success');
+    } else {
+      showToast('Savollar topilmadi. Formatni tekshiring', 'error');
+      document.getElementById('parsedInfo').style.display = 'none';
+    }
+  }
+
+  function parseQuestionsFromText(text) {
+    var questions = [];
+    text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    var blocks = text.split(/(?=(?:^|\n)\s*\d+\s*[.、)\]])/);
+    for (var b = 0; b < blocks.length; b++) {
+      var block = blocks[b];
+      if (!block.trim()) continue;
+      var q = parseOneQuestion(block);
+      if (q) questions.push(q);
+    }
+    if (questions.length === 0) {
+      return parseQuestionsLineByLine(text);
+    }
+    return questions;
+  }
+
+  function parseOneQuestion(block) {
+    var lines = block.trim().split('\n');
+    var cleanLines = [];
+    for (var i = 0; i < lines.length; i++) {
+      var l = lines[i].trim();
+      if (l) cleanLines.push(l);
+    }
+    if (cleanLines.length < 3) return null;
+    var questionText = '';
+    var optionStart = -1;
+    for (var i = 0; i < cleanLines.length; i++) {
+      if (/^[A-Da-d][).、]\s/.test(cleanLines[i]) || /^[A-Da-d]\s[).、]\s/.test(cleanLines[i])) {
+        optionStart = i;
+        break;
+      }
+    }
+    if (optionStart === -1) return null;
+    questionText = cleanLines.slice(0, optionStart).join(' ').replace(/^\d+\s*[.、)\]]\s*/, '').trim();
+    if (!questionText) return null;
+    var options = [];
+    var correctLetter = '';
+    for (var i = optionStart; i < cleanLines.length; i++) {
+      var optMatch = cleanLines[i].match(/^([A-Da-d])\s*[).、]\s*(.+)/);
+      if (optMatch) options.push(optMatch[2].trim());
+      var ansMatch = cleanLines[i].match(/[TТ]['ʼ']?g?ri?\s*javob\s*[:：]\s*([A-Da-d])/i);
+      if (ansMatch) correctLetter = ansMatch[1].toUpperCase();
+      if (!correctLetter) {
+        var javobMatch = cleanLines[i].match(/javob\s*[:：]\s*([A-Da-d])/i);
+        if (javobMatch) correctLetter = javobMatch[1].toUpperCase();
+      }
+    }
+    if (options.length < 2) return null;
+    while (options.length < 4) options.push('');
+    var correctIndex = 0;
+    if (correctLetter && correctLetter >= 'A' && correctLetter <= 'D') {
+      correctIndex = correctLetter.charCodeAt(0) - 65;
+    }
+    return { text: questionText, options: options.slice(0, 4), correctIndex: correctIndex };
+  }
+
+  function parseQuestionsLineByLine(text) {
+    var questions = [];
+    var lines = text.split('\n');
+    var cleanLines = [];
+    for (var i = 0; i < lines.length; i++) {
+      var l = lines[i].trim();
+      if (l) cleanLines.push(l);
+    }
+    var currentQ = null;
+    for (var i = 0; i < cleanLines.length; i++) {
+      var line = cleanLines[i];
+      if (/^\d+\s*[.、)\]]/.test(line)) {
+        if (currentQ && currentQ.options.length >= 2) questions.push(currentQ);
+        currentQ = { text: '', options: [], correctIndex: 0 };
+        currentQ.text = line.replace(/^\d+\s*[.、)\]]\s*/, '').trim();
+        continue;
+      }
+      if (!currentQ) continue;
+      var optMatch = line.match(/^([A-Da-d])\s*[).、]\s*(.+)/);
+      if (optMatch) { currentQ.options.push(optMatch[2].trim()); continue; }
+      var ansMatch = line.match(/[TТ]['ʼ']?g?ri?\s*javob\s*[:：]\s*([A-Da-d])/i) || line.match(/javob\s*[:：]\s*([A-Da-d])/i);
+      if (ansMatch) {
+        var letter = ansMatch[1].toUpperCase();
+        if (letter >= 'A' && letter <= 'D') currentQ.correctIndex = letter.charCodeAt(0) - 65;
+        continue;
+      }
+      if (currentQ.options.length === 0 && currentQ.text) currentQ.text += ' ' + line;
+    }
+    if (currentQ && currentQ.options.length >= 2) {
+      while (currentQ.options.length < 4) currentQ.options.push('');
+      currentQ.options = currentQ.options.slice(0, 4);
+      questions.push(currentQ);
+    }
+    return questions;
+  }
+
+  function parseManualInput() {
+    var text = document.getElementById('manualInput').value;
+    if (!text.trim()) { showToast('Matn kiriting', 'error'); return; }
+    parsedQuestions = parseQuestionsFromText(text);
+    if (parsedQuestions.length > 0) {
+      document.getElementById('parsedInfo').style.display = 'block';
+      document.getElementById('parsedCount').textContent = '✅ ' + parsedQuestions.length + ' ta savol topildi!';
+      document.getElementById('btnToStep2').disabled = false;
+      showToast(parsedQuestions.length + ' ta savol topildi!', 'success');
+    } else {
+      showToast('Savollar topilmadi. Formatni tekshiring', 'error');
+    }
+  }
+
+  // ===== DEFAULT 100 QUESTIONS =====
+  var defaultQuestions = [
+    {text:"... — bu axborot jarayonlarini oldindan belgilangan qoidalar asosida tizimga topshirishdir.",options:["Algoritmlash","Testlash","Modellashtirish","Avtomatlashtirish"],correctIndex:0},
+    {text:"... — bu axborot tizimidagi jarayonlarni: kamroq vaqt, kamroq resurs, kamroq xarajat va kamroq xatolik bilan bajariladigan holatga keltirishdir.",options:["Avtomatlashtirish","Modellashtirish","Dasturlash","Optimallashtirish"],correctIndex:3},
+    {text:"... – bu real hodisa va jarayonlar haqidagi, qabul qilinishi, qayta ishlanishi, saqlanishi va uzatilishi mumkin bo'lgan mazmunli ma'lumotdir.",options:["Axborot tizimi","Ma'lumot","Kompyuter","Axborot"],correctIndex:3},
+    {text:"..... — bu bulutli texnologiyalarning dastur ishlab chiqish uchun tayyor platforma taqdim etish modeli hisoblanadi.",options:["IaaS (Infrastructure as a Service)","SaaS (Software as a Service)","PaaS (Platform as a Service)","DbaaS (Database as a Service)"],correctIndex:2},
+    {text:"..... — bu bulutli texnologiyalarning server, xotira, tarmoq va saqlash infratuzilmasini internet orqali ijaraga berish modelidir.",options:["SaaS (Software as a Service)","PaaS (Platform as a Service)","IaaS (Infrastructure as a Service)","DbaaS (Database as a Service)"],correctIndex:2},
+    {text:"..... — bu bulutli texnologiyalarning tayyor dasturiy ta'minotdan internet orqali foydalanish modelidir.",options:["IaaS (Infrastructure as a Service)","PaaS (Platform as a Service)","SaaS (Software as a Service)","DbaaS (Database as a Service)"],correctIndex:2},
+    {text:"..... — bu hisoblash resurslari (server, xotira, ma'lumotlar bazasi, dasturiy ta'minot va boshqalar) internet orqali xizmat sifatida taqdim etiladigan modeldir.",options:["Veb dasturlash (Web Programming)","Klassik texnologiya(On-Premise)","To'rli hisoblashlar (Grid Computing)","Bulutli texnologiyalar (Cloud Computing)"],correctIndex:3},
+    {text:"......— bu axborot tizimining ishlash holatini uzluksiz kuzatish, tahlil qilish va baholash jarayonidir.",options:["Testlash","Normallashtirish","Monitoring","Dasturlash"],correctIndex:2},
+    {text:"\"Relyatsion\" atamasi qaysi so'zdan olingan?",options:["Relation (munosabat)","Record (Yozuv)","Object (Obyekt)","Structure (Struktura)"],correctIndex:0},
+    {text:"\"Talaba\" axborot tizimida \"Talabani qo'shish/tahrirlash/o'chirish (CRUD)\"- qanday talab hisoblanadi?",options:["Nofunksional","Murakkab (composite)","Funksional","Yashirin talab"],correctIndex:2},
+    {text:"Abstraksiya darajasiga ko'ra ma'lumotlar modeli nechta turga bo'linadi?",options:["3 ta","2 ta","4 ta","5 ta"],correctIndex:0},
+    {text:"Agar Talaba Entity boʻlsa, TalabaID, FIO kabi elementlar nima deb ataladi?",options:["Atributlar","Obyektlar","Bog'lanishlar","Metodlar"],correctIndex:0},
+    {text:"Asosiy afzalligi \"oddiy va tushunarliligi\" hisoblangan ma'lumotlar modeli qaysi?",options:["Ierarxik model","Relyatsion model","Tarmoq modeli","Landshaft modeli"],correctIndex:1},
+    {text:"Avtomatlashtirish asosan nimani kamaytiradi?",options:["Axborot hajmini","Tizim tezligini","Natija aniqligini","Inson ishtirokini"],correctIndex:3},
+    {text:"Axborot hajmining keskin oshishi, inson omilini kamaytirish va tezkor qaror qabul qilish kerakligi - qanday zaruratni yuzaga keltiradi?",options:["Modellashtirish","Talablarni aniqlash","Jarayonni kuzatish","Avtomatlashtirish"],correctIndex:3},
+    {text:"Axborot kechikib kelganda boshqaruv qanday bo'ladi?",options:["Samarasiz","Tezkor","Optimal","Barqaror"],correctIndex:0},
+    {text:"Axborot tizimda turli manbalardan olingan ma'lumotlarni yig'ish, tartiblash, qayta ishlash, solishtirish, baholash va ulardan foydali xulosa chiqarish jarayoni nima deyiladi?",options:["Tizimni testlash","Ma'lumotlarni tahlil qilish","Tizimni loyihalash","Ma'lumotlarni modellashtirish"],correctIndex:1},
+    {text:"Axborot tizimi qaysi zanjir asosida ishlaydi?",options:["Kirish → Qayta ishlash → Chiqish","Chiqish → Saqlash → Kirish","Grafik → Matn → Ovoz","Sensor → Printer → Monitor"],correctIndex:0},
+    {text:"Axborot tizimi sifatini rejalash, nazorat qilish va doimiy yaxshilashga qaratilgan boshqaruv faoliyati nima deyiladi?",options:["Ekspluatatsiya","Testlash","Sifatni boshqarish","Integratsiya"],correctIndex:2},
+    {text:"Axborot tizimida \"Bir vaqtning o'zida 10–20 operator ishlasin\" – qanaqa talab turiga kiradi?",options:["Funksional","Nofunksional","Murakkab (composite)","Yashirin talab"],correctIndex:1},
+    {text:"Axborot tizimida ma'lumotlar qayerda saqlanadi?",options:["Dastur kodida","Ma'lumotlar bazasida","Seyfda","Ma'lumotlar modelida"],correctIndex:1},
+    {text:"Axborot tizimida serverga tushayotgan yuklamani kamaytirish qaysi jarayonga xos?",options:["Modellashtirish","Dasturlash","Testlash","Optimallashtirish"],correctIndex:3},
+    {text:"Axborot tizimida: \"Sahifa 3 soniyadan ko'p bo'lmagan vaqtda ochilishi kerak\" – qaysi talab turiga mos keladi?",options:["Funksional","Nofunksional","Murakkab (composite)","Yashirin talab"],correctIndex:1},
+    {text:"Axborot tizimini loyihalashning: ekranlar soni aniqlanadi, formalar va maydonlar joylashuvi belgilanadi. Bu loyihalashning qaysi turi?",options:["Ma'lumotlar bazasini loyihalash","Interfeysni loyihalash (UI/UX Design)","Arxitektura loyihalash","Xavfsizlik loyihalash"],correctIndex:1},
+    {text:"Axborot tizimini loyihalashning: asosiy obyektlar aniqlanadi, atributlar belgilanadi, bog'lanishlar chiziladi. Bu qaysi tur?",options:["Interfeysni loyihalash","Ma'lumotlar bazasini loyihalash","Arxitektura loyihalash","Xavfsizlik loyihalash"],correctIndex:1},
+    {text:"Axborot tizimining ishlashini doimiy ravishda kuzatish, tizim holati haqida ma'lumot yig'ish jarayoni nima deyiladi?",options:["Testlash","Monitoring","Ekspluatatsiya","Avtomatizatsiya"],correctIndex:1},
+    {text:"Axborot tizmida turli manbalardan ma'lumotlarni bitta ekranda vizual tarzda jamlab ko'rsatuvchi panel nima?",options:["Tashqi interfeys","Dashboard","Database","Interaktiv datchik"],correctIndex:1},
+    {text:"Axborotni taqdim etish nimani bildiradi?",options:["Ma'lumotni yig'ish","Ma'lumotni saqlash","Ma'lumotni qayta ishlash","Natijani chiqarish"],correctIndex:3},
+    {text:"Axborotning aniqligi nimani bildiradi?",options:["Axborot qanchalik tez uzatilishini","Axborot hajmining katta bo'lishini","Axborot dizaynining chiroyliligini","Real holatni qanchalik to'g'ri aks ettirishini"],correctIndex:3},
+    {text:"Axborotning ishonchliligi nimaga bog'liq?",options:["Axborot hajmi va uzatish muhitiga","Axborot dizayni va loyihalash usuliga","Axborot rangiga","Manba va mazmunning haqqoniyligiga"],correctIndex:3},
+    {text:"Axborotning mavjudligi deganda nima tushuniladi?",options:["Axborot hajmining katta bo'lishini","Axborot grafik shaklda bo'lishini","Axborot faqat yozma bo'lishini","Zarur vaqtda foydalanishga yaroqli bo'lishini"],correctIndex:3},
+    {text:"Ayni vaqtda dunyodagi eng yirik bulutli platforma qaysi?",options:["Microsoft Azure","Google Cloud Platform","Amazon Web Services (AWS)","Alibaba Cloud"],correctIndex:2},
+    {text:"Bir vaqtning o'zida 1000 foydalanuvchi kirganda tizim sekinlashadimi yoki yo'qmi tekshirilsa, bu qaysi test turiga kiradi?",options:["Tizim testi","Kod tekshiruvi","Yuklama testi","Statik tahlil"],correctIndex:2},
+    {text:"Bir yoki bir nechda takrorlanuvchi ma'lumotlar guruhiga ega bo'lgan jadval qanday shakl deyiladi?",options:["1NF","Normallashtirish","Optimallashtirish","Normal bo'lmagan shakl (NBSh)"],correctIndex:3},
+    {text:"Boshqaruv jarayonida noto'g'ri axborot nimaga olib keladi?",options:["Noto'g'ri qarorga","Tezkor boshqaruvga","To'liq tahlilga","Avtomatlashtirishga"],correctIndex:0},
+    {text:"Bulutli modelda server resurslaridan odatda qanday foydalaniladi?",options:["Sotib olinadi","Yaratiladi","Ijaraga olinadi","Sotuvchi bilan bo'lishiladi"],correctIndex:2},
+    {text:"Bulutli texnologiyalarda hisoblash resurslari foydalanuvchiga qanday shaklda taqdim etiladi?",options:["Fayl sifatida","Modul sifatida","Xizmat sifatida","Paket sifatida"],correctIndex:2},
+    {text:"Bulutli texnologiyaning asosiy uchta modelidan SaaS modeli ko'proq kimga mos keladi?",options:["Dasturchi","DevOps","Oddiy foydalanuvchi","Administrator"],correctIndex:2},
+    {text:"Dasturiy mahsulotning g'oya paydo bo'lishidan ekspluatatsiyadan chiqarilishigacha bo'lgan barcha bosqichlarini qamrab oluvchi model nima?",options:["BPMN","SDLC","S.D&S.DS","Deployment"],correctIndex:1},
+    {text:"Dasturiy ta'minotni tekshirish jarayoni nima deyiladi?",options:["Loyihalash","Shifrlash","Testlash","Optimallashtirish"],correctIndex:2},
+    {text:"Davlat va strategik ahamiyatga ega axborotlar axborotning qanday turiga kiradi?",options:["Maxfiy axborot","Ochiq axborot","Sonli axborot","Audio axborot"],correctIndex:0},
+    {text:"Diagramma va sxemalar qanday axborot turiga kiradi?",options:["Matnli axborot","Audio axborot","Sonli axborot","Grafik axborot"],correctIndex:3},
+    {text:"Django loyihasini joylashtirishda Ubuntu, Python, Django va PostgreSQLni o'zingiz o'rnatsangiz, bu qaysi model bo'ladi?",options:["PaaS","SaaS","IaaS","Public Cloud"],correctIndex:2},
+    {text:"Elektron raqamli imzo (ERI) bilan tasdiqlangan ma'lumot axborotning qaysi xususiyatni ta'minlaydi?",options:["Tushunarlilik","Grafik ko'rinish","Axborot sifatini","Ishonchlilik"],correctIndex:3},
+    {text:"ER-diagramma odatda qaysi ma'lumotlar modelini loyihalashda qo'llaniladi?",options:["Relyatsion","Ierarxik","Tarmoqli","Obyektli"],correctIndex:0},
+    {text:"ERP tizimida real vaqt rejimida yangilanadigan ombor qoldig'i axborotning qaysi xususiyatiga misol bo'ladi?",options:["Tushunarlilik","To'liqlik","Maxfiylik","Dolzarblik"],correctIndex:3},
+    {text:"Foydalanuvchi moduli, ma'lumotlar bazasi va hisobot moduli birgalikda tekshirilsa, bu qaysi test turi?",options:["Funksional testlash","Yuklama testi","Integratsion testlash","Kodni nazorat qilish"],correctIndex:2},
+    {text:"Foydalanuvchi tizimga kirishi, ma'lumot kiritishi va hisobot olishi tekshirilsa, bu qaysi test turiga kiradi?",options:["Integratsion testlash","Tizim testlash","Funksional testlash","Yuklama testi"],correctIndex:2},
+    {text:"Google BigQuery bilan ishlashda so'rovlar qanday uslubda beriladi?",options:["Python pyscript uslubida","SQL uslubida","XML uslubida","JSon uslubida"],correctIndex:1},
+    {text:"Google Docs bulutli texnologiyaning qaysi modeliga kiradi?",options:["IaaS","PaaS","SaaS","GdaS"],correctIndex:2},
+    {text:"Hamma uchun ochiq bo'lgan ma'lumotlar qanday ataladi?",options:["Konfidensial axborot","Maxfiy axborot","Cheklangan axborot","Ochiq axborot"],correctIndex:3},
+    {text:"Ierarxik ma'lumotlar modeli qanday tuzilishga ega?",options:["Daraxt (ota–bola) ko'rinishida","Jadval (satr-ustun) ko'rinishida","Graf ko'rinishida","Obyektlar to'plami ko'rinishida"],correctIndex:0},
+    {text:"Ierarxik modelda har bir \"bola\" obyekt nechta \"ota\" obyektga eqa bo'ladi?",options:["Faqat bitta","Ikkita","Istalgancha","Umuman ega bo'lmaydi"],correctIndex:0},
+    {text:"Jadval, qator, ustun, PK, FK lar qaysi modelning asosiy elementlari hisoblanadi?",options:["Relyatsion","Ierarxik","Tarmoqli","Obyektli"],correctIndex:0},
+    {text:"Kelajakdagi holat qaysi tahlil turi orqali aniqlanadi?",options:["Diagnostik tahlil","Bashoratli tahlil","Tavsiyaviy tahlil","Tavsifiy tahlil"],correctIndex:1},
+    {text:"Kuzatuv kamerasi tasviri qanday axborot hisoblanadi?",options:["Audio axborot","Matnli axborot","Sonli axborot","Video axborot"],correctIndex:3},
+    {text:"Ma'lumotlar bazasida \"Manzil (Viloyat, Tuman, Ko'cha)\" tipidagi atributlar qanday atributlar deyiladi?",options:["Oddiy (simple)","Ko'p qiymatli (multivalued)","Murakkab (composite)","Hosilaviy (derived)"],correctIndex:2},
+    {text:"Ma'lumotlar bazasida har bir yozuvni yagona identifikatsiya qiluvchi maydon nima deb ataladi?",options:["Foreign Key (FK)","Primary Key (PK)","Atribut key (AK)","DatabaseKey (DK)"],correctIndex:1},
+    {text:"Ma'lumotlar bazasini mantiqan tartiblash va takrorlanishni kamaytirish jarayoni nima deyiladi?",options:["inventarizatsiya","lokalizatsiya","urbanizatsiya","normalizatsiya"],correctIndex:3},
+    {text:"Ma'lumotlar modeli bo'lmasa qanday holat yuzaga keladi?",options:["Ma'lumotlar tartibsiz bo'ladi va takrorlanish ko'payadi","Tizim tez ishlaydi","Axborot xavfsizligi oshadi","Dastur avtomatik yaratiladi"],correctIndex:0},
+    {text:"Ma'lumotlar modelida boshqa jadvalga ishora qiluvchi maydon nima deb ataladi?",options:["Primary Key (PK)","Foreign Key (FK)","Candidate key","Composite key"],correctIndex:1},
+    {text:"Ma'lumotlar modelida Izchillik (integrity) deganda nima tushuniladi?",options:["Ma'lumotlarning mantiqan to'g'ri va qarama-qarshi bo'lmasligi","Ma'lumotlarning ko'p nusxada saqlanishi","Ma'lumotlar rangli bo'lishi","Ma'lumotlar tez uzatilishi"],correctIndex:0},
+    {text:"Ma'lumotlar modellarining klassik turlariga qaysilar kiradi?",options:["Ierarxik, tarmoqli, relyatsion","Grafik, audio, video","Statik va dinamik","Fizik, virtual va konseptual"],correctIndex:0},
+    {text:"Ma'lumotlar tahlilining yakuniy bosqichi nima?",options:["Yig'ish","Xulosa chiqarish","Tozalash","Testlash"],correctIndex:1},
+    {text:"Ma'lumotlarni modellashtirishda asosiy elementlar qaysilar?",options:["Dastur, tizim va foydalanuvchi","Obyekt, atribut, bog'lanish","Server, mijoz va tarmoq","Barcha apparat vositalar"],correctIndex:1},
+    {text:"Ma'lumotlarni obyektlar, atributlar va bog'lanishlar ko'rinishida ifodalash jarayoni nima deyiladi?",options:["Ma'lumotlarni modellashtirish","Ma'lumotlar bilan ishlovchi dasturni yozish","Talablarni yig'ish","Funksiyalarni aniqlash"],correctIndex:0},
+    {text:"Ma'lumotlarni tashkil etish usuliga Grafik tuzilma qanday model deyiladi?",options:["Relyatsion model","Tarmoq modeli","Ierarxik model","Obyektga yo'naltirilgan model"],correctIndex:1},
+    {text:"Ma'lumotlarni yig'ish, statistik tahlil qilish va modellash optimallashtirishning qaysi bosqichiga kiradi?",options:["Maqsadni belgilash","O'zgarish kiritish","Natijani o'lchash","Tahlil va prognoz"],correctIndex:3},
+    {text:"Ma'lumotlarning tuzilishi, bog'lanishlari va ularga qo'yilgan qoidalarni ifodalovchi formal tasvir nima deyiladi?",options:["Ma'lumotlar modeli","Axborot tizimi","Axborot","Grafik interfeys dasturi"],correctIndex:0},
+    {text:"Mantiqiy model qaysi bosqichdan keyin tuziladi?",options:["Kontseptual modeldan keyin","Fizik modeldan keyin","Dasturlashdan keyin","Ekspluatatsiyadan keyin"],correctIndex:0},
+    {text:"Microsoft Azure (Virtual Machines) - bulutli texnologiyaning qaysi modeliga kiradi?",options:["SaaS","PaaS","IaaS","DBaaS"],correctIndex:2},
+    {text:"Monitoring jarayonining birinchi bosqichi qaysi?",options:["Ma'lumotlarni qayta ishlash","Ogohlantirish","Ma'lumotlarni yig'ish","Muammolarni bartaraf etish"],correctIndex:2},
+    {text:"Monitoring jarayonining ikkinchi bosqichi qaysi?",options:["Ma'lumotlarni yig'ish","Ogohlantirish","Ma'lumotlarni qayta ishlash va tahlil qilish","Muammolarni bartaraf etish"],correctIndex:2},
+    {text:"Muammo haqida xabar berish asosan qaysi jarayonga xos?",options:["Dasturlash","Monitoring","Loyihalash","Tahlil"],correctIndex:1},
+    {text:"Normalizatsiya nimaga xizmat qiladi?",options:["Jadvallar hajmini kattalashtirishga","Foydalanuvchilar sonini ortishiga","Talablar sonini qisqarishiga","Takrorlanishni kamaytirishga"],correctIndex:3},
+    {text:"Normallashtirishda har bir maydon faqat bitta qiymatni o'z ichiga oladi. Bu qaysi normal shakl?",options:["2NF","3NF","4NF","1NF"],correctIndex:3},
+    {text:"Nutq va musiqa qanday axborot turiga mansub?",options:["Grafik axborot","Matnli axborot","Sonli axborot","Audio axborot"],correctIndex:3},
+    {text:"Obyektga yo'naltirilgan model nimaga asoslanadi?",options:["OOP tamoyillariga","Faqat SQLga","Grafik dizaynga","Fayl tizimiga"],correctIndex:0},
+    {text:"Obyektga yo'naltirilgan modelda obyekt nimaga ega bo'ladi?",options:["Atributlar va metodlarga","Faqat ustunlarga","Satrlar va unreal elementlarga","Kalitlar va qulflarga"],correctIndex:0},
+    {text:"Optimallashtirish qachon zarur bo'ladi?",options:["Jarayon tez bo'lsa","Tizim kichik bo'lsa","Tizim yangi bo'lsa","Tizim sekin ishlayotgan bo'lsa"],correctIndex:3},
+    {text:"Optimallashtirishning qaysi bosqichida iterativ yondashuv orqali jarayni yanada samarali qilish amalga oshiriladi?",options:["Maqsadni belgilash","Tahlil va prognoz","Muammoni aniqlash","Takomillashtirish"],correctIndex:3},
+    {text:"PaaS modeli ko'proq kimlarga mos keladi?",options:["Oddiy foydalanuvchilarga","DevOpsga","Dasturchilarga","Administratorga"],correctIndex:2},
+    {text:"Qaysi bulutli texnologiya modelida foydalanuvchi \"Operatsion tizim\"ni o'zi o'rnatadi?",options:["SaaS","PaaS","IaaS","DbaaS"],correctIndex:2},
+    {text:"Qo'lda bajariladigan axborot jarayonlarini dasturiy vositalar orqali bajariladigan holatga o'tkazish jarayoni nima?",options:["Optimallashtirish","Avtomatlashtirish","Joriy etish","Monitoring"],correctIndex:1},
+    {text:"Qo'lda bajariladigan jarayonlarning asosiy kamchiligi nima?",options:["Vaqt kam sarflanishi","Xatolik ehtimoli yuqori","Aniqlilik uchun ko'p texnika talab etilishi","Hisobotlarni avtomatlashganligi"],correctIndex:1},
+    {text:"Relyatsion ma'lumotlar modeli kim tomonidan taklif etilgan?",options:["E. Codd","B. Gates","L. Torvalds","S. Jobs"],correctIndex:0},
+    {text:"Relyatsion modelda ma'lumotlar qanday saqlanadi?",options:["Jadval (satr–ustun) ko'rinishida","Daraxt (ota-bola) ko'rinishida","Graf ko'rinishida","Obyektlar ko'rinishida"],correctIndex:0},
+    {text:"Resurslarni internet orqali xizmat sifatida olish qanday texnologiya deb ataladi?",options:["Web texnologiya","Bulutli texnologiya","Internet texnologiya","Intranet texnologiya"],correctIndex:1},
+    {text:"SaaS modelida foydalanuvchi qanday dasturiy tizimdan foydalanadi?",options:["O'zi o'rnatgan tizimdan","Virtual mashinada joylashgan tizimdan","Tayyor tizimdan","O'z kompyuteridagi dasturiy muhitdan"],correctIndex:2},
+    {text:"SDLC qisqartmasi nimani anglatadi?",options:["Software Development Life Cycle","System Design Logical Code","Software Data Link Control","Structured Development Logic Code"],correctIndex:0},
+    {text:"Shaxsiy va tijorat sirlariga oid ma'lumotlar qaysi axborot turiga kiradi?",options:["Ochiq axborot","Sonli axborot","Audio axborot","Konfidensial axborot"],correctIndex:3},
+    {text:"Sinovdan o'tgan dasturiy ta'minotni real ish muhitiga o'rnatish jarayoni nima?",options:["Acceptance test","Deployment - Joriy etish","Maintenance","Implementation"],correctIndex:1},
+    {text:"Talaba ↔ Guruh munosabati nimani ifodalaydi?",options:["Obyektlar orasidagi bog'lanishni","Ma'lumot turini va xususiyatlarini","Fizik saqlash joyini","Grafik interfeysni"],correctIndex:0},
+    {text:"Talabalar reytingidan o'rtacha ballni hisoblash axborot tizimi zanjirining qaysi bosqichiga misol?",options:["Qayta ishlash","Kirish","Saqlash","Uzatish"],correctIndex:0},
+    {text:"Tarmoqli model nimani ifodalaydi?",options:["Birga-ko'p bog'lanishlarni","Ko'pga-ko'p bog'lanishlarni","Birga-Bir bog'lanishlarni","Daraxt ko'rinishidagi tuzilmani"],correctIndex:1},
+    {text:"Tarmoqli modelning asosiy kamchiligi nimada?",options:["Tuzilishi murakkab va foydalanish qiyin","Ma'lumotlar saqlanmaydi","Grafik ishlatilmaydi","Jadval tushunchasi yo'q"],correctIndex:0},
+    {text:"Testlashning asosiy maqsadi nima?",options:["Grafikni shakllantirish","Xatolarni aniqlash","Fayllarni hajmini aniqlash","Xatolarni dasturlash"],correctIndex:1},
+    {text:"Tizim funksiyalarining talabga mos ishlashini aniqlash qaysi testlash orqali?",options:["Nofunksional testlash","Funksional testlash","Integratsion testlash","Yuklama testi"],correctIndex:1},
+    {text:"Wireshark dasturiy vositasi nimani monitoring qiladi?",options:["Serverni","Ma'lumotlar bazasini","Tarmoq trafigini","Axborot tizimini"],correctIndex:2},
+    {text:"Zabbix dasturiy vositasi asosan nimani monitoring qiladi?",options:["Saytni va provayderni","Ma'lumotlar bazasini","Server va tarmoq qurilmalarini","Axborot tizimini"],correctIndex:2}
+  ];
+
+  function loadDefaultQuestions() {
+    parsedQuestions = [];
+    for (var i = 0; i < defaultQuestions.length; i++) {
+      parsedQuestions.push({ id: i+1, text: defaultQuestions[i].text, options: defaultQuestions[i].options.slice(), correctIndex: defaultQuestions[i].correctIndex });
+    }
+    document.getElementById('testName').value = 'Axborot Tizimi - Test';
+    document.getElementById('parsedInfo').style.display = 'block';
+    document.getElementById('parsedCount').textContent = '✅ ' + parsedQuestions.length + ' ta savol yuklandi!';
+    document.getElementById('btnToStep2').disabled = false;
+    showToast(parsedQuestions.length + ' ta standart savol yuklandi!', 'success');
+  }
+
+  // ===== TEACHER STEPS =====
+  function updateStepIndicator(step) {
+    for (var i = 1; i <= 3; i++) {
+      var dot = document.getElementById('step' + i + 'dot');
+      dot.classList.remove('active', 'done');
+      if (i < step) dot.classList.add('done');
+      else if (i === step) dot.classList.add('active');
+    }
+  }
+
+  function goToStep1() {
+    currentStep = 1; updateStepIndicator(1);
+    document.getElementById('teacherStep1').style.display = 'block';
+    document.getElementById('teacherStep2').style.display = 'none';
+    document.getElementById('teacherStep3').style.display = 'none';
+  }
+
+  function goToStep2() {
+    if (parsedQuestions.length === 0) { showToast('Avval savollarni yuklang', 'error'); return; }
+    editingQuestions = [];
+    for (var i = 0; i < parsedQuestions.length; i++) {
+      editingQuestions.push({ id: i+1, text: parsedQuestions[i].text, options: parsedQuestions[i].options.slice(), correctIndex: parsedQuestions[i].correctIndex });
+    }
+    renderQuestionsEditor();
+    currentStep = 2; updateStepIndicator(2);
+    document.getElementById('teacherStep1').style.display = 'none';
+    document.getElementById('teacherStep2').style.display = 'block';
+    document.getElementById('teacherStep3').style.display = 'none';
+  }
+
+  function goToStep2From3() {
+    currentStep = 2; updateStepIndicator(2);
+    document.getElementById('teacherStep2').style.display = 'block';
+    document.getElementById('teacherStep3').style.display = 'none';
+  }
+
+  function goToStep3() {
+    saveEditedQuestions();
+    if (editingQuestions.length === 0) { showToast('Kamida bitta savol bo\'lishi kerak', 'error'); return; }
+    currentStep = 3; updateStepIndicator(3);
+    document.getElementById('teacherStep2').style.display = 'none';
+    document.getElementById('teacherStep3').style.display = 'block';
+    if (!document.getElementById('groupLogin').value) generateCredentials();
+  }
+
+  function renderQuestionsEditor() {
+    var container = document.getElementById('questionsEditor');
+    var html = '';
+    for (var idx = 0; idx < editingQuestions.length; idx++) {
+      var q = editingQuestions[idx];
+      html += '<div class="question-item">';
+      html += '<span class="q-num">' + (idx+1) + '</span>';
+      html += '<button class="remove-q" data-idx="' + idx + '">&times;</button>';
+      html += '<div class="input-group" style="margin-bottom:10px"><input type="text" value="' + escHtml(q.text) + '" data-idx="' + idx + '" data-field="text" style="font-weight:600"></div>';
+      var letters = ['A','B','C','D'];
+      for (var oi = 0; oi < q.options.length; oi++) {
+        html += '<div class="option-row">';
+        html += '<input type="radio" name="correct_' + idx + '" data-idx="' + idx + '" data-oi="' + oi + '"' + (q.correctIndex === oi ? ' checked' : '') + '>';
+        html += '<span style="color:var(--primary-light);font-weight:700;min-width:20px">' + letters[oi] + ')</span>';
+        html += '<input type="text" value="' + escHtml(q.options[oi]) + '" data-idx="' + idx + '" data-oi="' + oi + '" data-field="option">';
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+    container.innerHTML = html;
+
+    // Bind events for editor
+    container.querySelectorAll('.remove-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var i = parseInt(this.getAttribute('data-idx'));
+        editingQuestions.splice(i, 1);
+        renderQuestionsEditor();
+      });
+    });
+    container.querySelectorAll('input[data-field="text"]').forEach(function(inp) {
+      inp.addEventListener('change', function() {
+        editingQuestions[parseInt(this.getAttribute('data-idx'))].text = this.value;
+      });
+    });
+    container.querySelectorAll('input[data-field="option"]').forEach(function(inp) {
+      inp.addEventListener('change', function() {
+        editingQuestions[parseInt(this.getAttribute('data-idx'))].options[parseInt(this.getAttribute('data-oi'))] = this.value;
+      });
+    });
+    container.querySelectorAll('input[type="radio"]').forEach(function(inp) {
+      inp.addEventListener('change', function() {
+        editingQuestions[parseInt(this.getAttribute('data-idx'))].correctIndex = parseInt(this.getAttribute('data-oi'));
+      });
+    });
+  }
+
+  function addNewQuestion() {
+    editingQuestions.push({ id: editingQuestions.length + 1, text: '', options: ['','','',''], correctIndex: 0 });
+    renderQuestionsEditor();
+    var editor = document.getElementById('questionsEditor');
+    editor.scrollTop = editor.scrollHeight;
+  }
+
+  function saveEditedQuestions() {
+    parsedQuestions = [];
+    for (var i = 0; i < editingQuestions.length; i++) {
+      parsedQuestions.push({ id: i+1, text: editingQuestions[i].text, options: editingQuestions[i].options.slice(), correctIndex: editingQuestions[i].correctIndex });
+    }
+  }
+
+  function generateCredentials() {
+    document.getElementById('groupLogin').value = generateId(6);
+    document.getElementById('groupPassword').value = generatePassword(8);
+  }
+
+  // ===== CREATE TEST =====
+  function createTest() {
+    var name = document.getElementById('testName').value.trim();
+    var groupName = document.getElementById('groupName').value.trim();
+    var login = document.getElementById('groupLogin').value.trim();
+    var password = document.getElementById('groupPassword').value.trim();
+    var startMode = document.getElementById('startMode').value;
+    var questionTime = parseInt(document.getElementById('questionTime').value) || 30;
+
+    if (!name) { showToast('Test nomini kiriting', 'error'); return; }
+    if (!groupName) { showToast('Guruh nomini kiriting', 'error'); return; }
+    if (!login) { showToast('Login generatsiya qiling', 'error'); return; }
+    if (!password) { showToast('Parol generatsiya qiling', 'error'); return; }
+
+    saveEditedQuestions();
+
+    var test = {
+      id: 'test_' + Date.now(),
+      name: name,
+      groupName: groupName,
+      login: login,
+      password: password,
+      startMode: startMode,
+      questionTime: questionTime,
+      questions: parsedQuestions,
+      createdAt: new Date().toISOString(),
+      groupStarted: false,
+      connectedStudents: [],
+      results: []
+    };
+
+    var tests = getTests();
+    tests.push(test);
+    saveTests(tests);
+    updateTestInCloud(test);
+
+    var testId = test.id;
+
+    showModal(
+      '<div style="text-align:center">' +
+      '<div style="font-size:50px;margin-bottom:12px">🎉</div>' +
+      '<h2 style="margin-bottom:16px">Test muvaffaqiyatli yaratildi!</h2>' +
+      '<div class="credential-box"><div class="cred-label">TEST NOMI</div><div class="cred-value" style="font-size:16px;letter-spacing:0">' + escHtml(name) + '</div></div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+      '<div class="credential-box"><div class="cred-label">LOGIN</div><div class="cred-value">' + escHtml(login) + '</div></div>' +
+      '<div class="credential-box"><div class="cred-label">PAROL</div><div class="cred-value">' + escHtml(password) + '</div></div>' +
+      '</div>' +
+      '<p style="color:var(--text2);font-size:13px;margin:12px 0">Bu ma\'lumotlarni talabalarga bering</p>' +
+      '<div style="display:flex;gap:10px;justify-content:center;margin-top:16px">' +
+      '<button class="btn btn-outline" id="modalHomeBtn">Bosh sahifa</button>' +
+      '<button class="btn btn-primary" id="modalControlBtn">Guruhni boshqarish</button>' +
+      '</div></div>'
+    );
+
+    // Bind modal buttons
+    document.getElementById('modalHomeBtn').addEventListener('click', function() { closeModal(); showScreen('landingScreen'); });
+    document.getElementById('modalControlBtn').addEventListener('click', function() { closeModal(); openTeacherControl(testId); });
+
+    // Reset
+    parsedQuestions = []; editingQuestions = []; currentStep = 1;
+    goToStep1();
+    document.getElementById('testName').value = '';
+    document.getElementById('groupName').value = '';
+    document.getElementById('groupLogin').value = '';
+    document.getElementById('groupPassword').value = '';
+    document.getElementById('parsedInfo').style.display = 'none';
+    document.getElementById('btnToStep2').disabled = true;
+    document.getElementById('manualInput').value = '';
+  }
+
+  // ===== TEACHER CONTROL =====
+  function openTeacherControl(testId) {
+    var test = getTestById(testId);
+    if (!test) { showToast('Test topilmadi', 'error'); return; }
+    currentTest = test;
+
+    document.getElementById('controlTestInfo').innerHTML =
+      '<h3>' + escHtml(test.name) + '</h3>' +
+      '<p style="color:var(--text2)">Guruh: ' + escHtml(test.groupName) + ' | Savollar: ' + test.questions.length + '</p>' +
+      '<div class="credential-box" style="margin-top:8px">' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+      '<div><div class="cred-label">LOGIN</div><div class="cred-value" style="font-size:16px">' + escHtml(test.login) + '</div></div>' +
+      '<div><div class="cred-label">PAROL</div><div class="cred-value" style="font-size:16px">' + escHtml(test.password) + '</div></div>' +
+      '</div></div>';
+
+    updateTeacherControl(testId);
+    showScreen('teacherControlScreen');
+
+    if (window._controlPoll) clearInterval(window._controlPoll);
+    window._controlPoll = setInterval(function() { updateTeacherControl(testId); }, 2000);
+  }
+
+  // ===== EXPORT / IMPORT HELPERS =====
+  function exportTestToClipboard(testId) {
+    var test = getTestById(testId);
+    if (!test) { showToast('Test topilmadi', 'error'); return; }
+    try {
+      var txt = JSON.stringify(test);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(function() { showToast('Test JSON clipboard ga nusxalandi. Talabalar uni import qila oladi.', 'success'); });
+      } else {
+        showModal('<h3>Test JSON nusxalash</h3><textarea id="exportArea" rows="10" style="width:100%">' + escHtml(txt) + '</textarea>');
+      }
+    } catch(e) { showToast('Eksportda xatolik: ' + e.message, 'error'); }
+  }
+
+  function promptImportTest() {
+    showModal(
+      '<h3>Test import qilish</h3>' +
+      '<p style="color:var(--text2);font-size:13px">O\'qituvchi bergan JSONni pastga joylang va "Import" bosing.</p>' +
+      '<textarea id="importArea" rows="10" style="width:100%"></textarea>' +
+      '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">' +
+      '<button class="btn btn-outline" id="importCancel">Bekor</button>' +
+      '<button class="btn btn-primary" id="importConfirm">Import</button>' +
+      '</div>'
+    );
+    document.getElementById('importCancel').addEventListener('click', function() { closeModal(); });
+    document.getElementById('importConfirm').addEventListener('click', function() {
+      var txt = document.getElementById('importArea').value.trim();
+      if (!txt) { showToast('Iltimos JSON kiriting', 'error'); return; }
+      try {
+        var obj = JSON.parse(txt);
+        if (!obj.id || !obj.name) { showToast('Noto‘g‘ri format', 'error'); return; }
+        var tests = getTests();
+        // avoid duplicate id
+        var exists = false;
+        for (var i = 0; i < tests.length; i++) { if (tests[i].id === obj.id) { exists = true; break; } }
+        if (exists) { showToast('Bu test allaqachon mavjud', 'info'); closeModal(); return; }
+        tests.push(obj);
+        saveTests(tests);
+        updateTestInCloud(obj);
+        closeModal();
+        showToast('Test muvaffaqiyatli import qilindi', 'success');
+        renderTestList();
+      } catch(e) { showToast('JSON ni parse qilib bo‘lmadi: ' + e.message, 'error'); }
+    });
+  }
+
+  function updateTeacherControl(testId) {
+    var test = getTestById(testId);
+    if (!test) return;
+    var connected = test.connectedStudents || [];
+    document.getElementById('connectedCount').textContent = connected.length;
+    document.getElementById('finishedCount').textContent = (test.results || []).length;
+
+    var membersHtml = '';
+    for (var i = 0; i < connected.length; i++) {
+      membersHtml += '<div class="member-chip">👤 ' + escHtml(connected[i].name) + '</div>';
+    }
+    document.getElementById('connectedMembers').innerHTML = membersHtml;
+
+    var startBtn = document.getElementById('startGroupBtn');
+    if (test.groupStarted) {
+      startBtn.textContent = '✅ Test boshlangan';
+      startBtn.disabled = true;
+    } else {
+      startBtn.textContent = '🚀 Testni boshlash (' + connected.length + ' talaba)';
+      startBtn.disabled = connected.length === 0;
+    }
+
+    if (test.results && test.results.length > 0) {
+      var resultsDiv = document.getElementById('resultsTable');
+      resultsDiv.style.display = 'block';
+      var rhtml = '<h4 style="margin-bottom:10px">📊 Natijalar</h4>' +
+        '<table style="width:100%;border-collapse:collapse;font-size:14px">' +
+        '<thead><tr style="border-bottom:1px solid var(--border)">' +
+        '<th style="padding:8px;text-align:left">#</th>' +
+        '<th style="padding:8px;text-align:left">Talaba</th>' +
+        '<th style="padding:8px;text-align:center">To\'g\'ri</th>' +
+        '<th style="padding:8px;text-align:center">Foiz</th></tr></thead><tbody>';
+      for (var i = 0; i < test.results.length; i++) {
+        var r = test.results[i];
+        var col = r.percentage >= 70 ? '#6ee7b7' : r.percentage >= 50 ? '#fcd34d' : '#fca5a5';
+        rhtml += '<tr style="border-bottom:1px solid rgba(255,255,255,0.05)">' +
+          '<td style="padding:8px">' + (i+1) + '</td>' +
+          '<td style="padding:8px">' + escHtml(r.studentName) + '</td>' +
+          '<td style="padding:8px;text-align:center;color:#6ee7b7">' + r.correct + '/' + r.total + '</td>' +
+          '<td style="padding:8px;text-align:center;font-weight:700;color:' + col + '">' + r.percentage + '%</td></tr>';
+      }
+      rhtml += '</tbody></table>';
+      resultsDiv.innerHTML = rhtml;
+    }
+  }
+
+  function startGroupTest() {
+    var tests = getTests();
+    var idx = -1;
+    for (var i = 0; i < tests.length; i++) { if (tests[i].id === currentTest.id) { idx = i; break; } }
+    if (idx === -1) return;
+    tests[idx].groupStarted = true;
+    saveTests(tests);
+    updateTestInCloud(tests[idx]);
+    showToast('Test boshlandi!', 'success');
+    updateTeacherControl(currentTest.id);
+  }
+
+  // ===== STUDENT LOGIN =====
+  function renderTestList() {
+    var tests = getTests();
+    var list = document.getElementById('testList');
+    if (tests.length === 0) {
+      list.innerHTML = '<p style="color:var(--text2);font-size:13px">Hali testlar yo\'q</p>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < tests.length; i++) {
+      html += '<div class="test-list-item" data-login="' + escHtml(tests[i].login) + '">' +
+        '<div><strong>' + escHtml(tests[i].name) + '</strong>' +
+        '<p style="font-size:12px;color:var(--text2);margin-top:2px">' + escHtml(tests[i].groupName) + ' | ' + tests[i].questions.length + ' savol</p></div>' +
+        '<span style="font-size:20px">→</span></div>';
+    }
+    list.innerHTML = html;
+    list.querySelectorAll('.test-list-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        document.getElementById('studentLogin').value = this.getAttribute('data-login');
+      });
+    });
+  }
+
+  function studentLoginFn() {
+    var name = document.getElementById('studentName').value.trim();
+    var login = document.getElementById('studentLogin').value.trim();
+    var password = document.getElementById('studentPassword').value.trim();
+
+    if (!name) { showToast('Ismingizni kiriting', 'error'); return; }
+    if (!login || !password) { showToast('Login va parolni kiriting', 'error'); return; }
+
+    var tests = getTests();
+    var test = null;
+    for (var i = 0; i < tests.length; i++) {
+      if (tests[i].login === login && tests[i].password === password) { test = tests[i]; break; }
+    }
+    if (!test) { showToast('Login yoki parol noto\'g\'ri', 'error'); return; }
+
+    currentTest = test;
+    studentSession = { name: name, testId: test.id };
+
+    var idx = -1;
+    for (var i = 0; i < tests.length; i++) { if (tests[i].id === test.id) { idx = i; break; } }
+    if (!tests[idx].connectedStudents) tests[idx].connectedStudents = [];
+    var found = false;
+    for (var j = 0; j < tests[idx].connectedStudents.length; j++) {
+      if (tests[idx].connectedStudents[j].name === name) { found = true; break; }
+    }
+    if (!found) {
+      tests[idx].connectedStudents.push({ name: name, connectedAt: new Date().toISOString() });
+      saveTests(tests);
+      updateTestInCloud(tests[idx]);
+    }
+
+    if (test.startMode === 'group') {
+      showStudentWaiting();
+    } else if (test.startMode === 'any') {
+      startTestForStudent();
+    } else {
+      showStartModeChoice();
+    }
+  }
+
+  function showStartModeChoice() {
+    showModal(
+      '<div style="text-align:center">' +
+      '<h2 style="margin-bottom:16px">Testni boshlash usuli</h2>' +
+      '<p style="color:var(--text2);margin-bottom:20px">Qanday usulda boshlamoqchisiz?</p>' +
+      '<div style="display:flex;flex-direction:column;gap:12px">' +
+      '<button class="btn btn-primary" style="width:100%" id="modalGroupStart">👥 Guruh bilan boshlash<br><small style="font-weight:400">O\'qituvchi boshlashini kuting</small></button>' +
+      '<button class="btn btn-success" style="width:100%" id="modalSoloStart">🚀 O\'zim boshlash<br><small style="font-weight:400">Darhol boshlang</small></button>' +
+      '</div></div>'
+    );
+    document.getElementById('modalGroupStart').addEventListener('click', function() { closeModal(); showStudentWaiting(); });
+    document.getElementById('modalSoloStart').addEventListener('click', function() { closeModal(); startTestForStudent(); });
+  }
+
+  function showStudentWaiting() {
+    document.getElementById('waitTestInfo').innerHTML =
+      '<h3>' + escHtml(currentTest.name) + '</h3><p style="color:var(--text2)">' + escHtml(currentTest.groupName) + '</p>';
+    showScreen('studentWaitScreen');
+
+    if (window._waitPoll) clearInterval(window._waitPoll);
+    window._waitPoll = setInterval(function() {
+      var test = getTestById(currentTest.id);
+      if (!test) return;
+      var members = test.connectedStudents || [];
+      var mhtml = '';
+      for (var i = 0; i < members.length; i++) mhtml += '<div class="member-chip">👤 ' + escHtml(members[i].name) + '</div>';
+      document.getElementById('groupMembers').innerHTML = mhtml;
+      document.getElementById('waitCount').textContent = members.length + ' talaba ulangan';
+      if (test.groupStarted) { clearInterval(window._waitPoll); startTestForStudent(); }
+    }, 1500);
+  }
+
+  // ===== TEST ENGINE =====
+  function startTestForStudent() {
+    if (window._waitPoll) clearInterval(window._waitPoll);
+    var test = getTestById(currentTest.id);
+    if (!test) { showToast('Test topilmadi', 'error'); return; }
+
+    var shuffledQuestions = [];
+    var indices = [];
+    for (var i = 0; i < test.questions.length; i++) indices.push(i);
+    var shuffledIndices = shuffleArray(indices);
+
+    for (var si = 0; si < shuffledIndices.length; si++) {
+      var q = test.questions[shuffledIndices[si]];
+      var optIndices = [0, 1, 2, 3];
+      var shuffledOpts = shuffleArray(optIndices);
+      var newOpts = [];
+      for (var j = 0; j < shuffledOpts.length; j++) newOpts.push(q.options[shuffledOpts[j]]);
+      var newCorrect = shuffledOpts.indexOf(q.correctIndex);
+
+      shuffledQuestions.push({
+        id: si + 1,
+        text: q.text,
+        options: newOpts,
+        correctIndex: newCorrect
+      });
+    }
+
+    testState = {
+      testId: test.id,
+      testName: test.name,
+      groupName: test.groupName,
+      studentName: studentSession.name,
+      questions: shuffledQuestions,
+      currentIndex: 0,
+      answers: {},
+      correctCount: 0,
+      totalAttempts: 0,
+      startTime: Date.now(),
+      questionTime: test.questionTime,
+      timeLeft: test.questionTime,
+      isAnswering: false
+    };
+
+    showScreen('testScreen');
+    renderQuestion();
+    startTimer();
+  }
+
+  function renderQuestion() {
+    var q = testState.questions[testState.currentIndex];
+    var answered = testState.answers[q.id];
+
+    document.getElementById('testTitleBadge').textContent = testState.testName;
+    document.getElementById('questionBadge').textContent = 'Savol ' + (testState.currentIndex + 1) + '/' + testState.questions.length;
+
+    var answeredCount = Object.keys(testState.answers).length;
+    var pct = (answeredCount / testState.questions.length) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = answeredCount + ' / ' + testState.questions.length + ' savol';
+
+    document.getElementById('questionText').textContent = q.text;
+
+    // Show/hide finish button (visible when at least 1 question answered)
+    var finishBtn = document.getElementById('btnFinishTest');
+    if (answeredCount >= 1) {
+      finishBtn.style.display = 'inline-flex';
+    } else {
+      finishBtn.style.display = 'none';
+    }
+
+    var letters = ['A', 'B', 'C', 'D'];
+    var opts = q.options;
+    var optList = document.getElementById('optionsList');
+    optList.innerHTML = '';
+
+    for (var i = 0; i < opts.length; i++) {
+      var btn = document.createElement('button');
+      btn.className = 'option-btn';
+      if (answered && answered.correct) {
+        btn.classList.add('disabled');
+        if (i === q.correctIndex) btn.classList.add('correct');
+      }
+      btn.innerHTML = '<span class="opt-letter">' + letters[i] + '</span><span>' + escHtml(opts[i]) + '</span>';
+      if (!answered || !answered.correct) {
+        (function(index) {
+          btn.addEventListener('click', function() { selectAnswer(index); });
+        })(i);
+      }
+      optList.appendChild(btn);
+    }
+
+    document.getElementById('wrongMessage').style.display = 'none';
+    renderQuestionNav();
+
+    testState.timeLeft = testState.questionTime;
+    testState.isAnswering = false;
+    updateTimerDisplay();
+  }
+
+  function renderQuestionNav() {
+    var nav = document.getElementById('questionNav');
+    nav.innerHTML = '';
+    for (var i = 0; i < testState.questions.length; i++) {
+      var q = testState.questions[i];
+      var dot = document.createElement('button');
+      dot.className = 'q-dot';
+      if (i === testState.currentIndex) dot.classList.add('current');
+      if (testState.answers[q.id] && testState.answers[q.id].correct) dot.classList.add('answered');
+      dot.textContent = i + 1;
+      (function(idx, qid) {
+        dot.addEventListener('click', function() {
+          if (testState.answers[qid] || idx === getNextUnanswered()) {
+            testState.currentIndex = idx;
+            renderQuestion();
+          }
+        });
+      })(i, q.id);
+      nav.appendChild(dot);
+    }
+  }
+
+  function getNextUnanswered() {
+    for (var i = 0; i < testState.questions.length; i++) {
+      var q = testState.questions[i];
+      if (!testState.answers[q.id] || !testState.answers[q.id].correct) return i;
+    }
+    return testState.questions.length - 1;
+  }
+
+  function selectAnswer(selectedIndex) {
+    var q = testState.questions[testState.currentIndex];
+    var isCorrect = selectedIndex === q.correctIndex;
+
+    testState.totalAttempts++;
+    if (!testState.answers[q.id]) testState.answers[q.id] = { correct: false, attempts: 0 };
+    testState.answers[q.id].attempts++;
+
+    var optBtns = document.querySelectorAll('.option-btn');
+
+    if (isCorrect) {
+      testState.answers[q.id].correct = true;
+      testState.correctCount++;
+      for (var i = 0; i < optBtns.length; i++) {
+        optBtns[i].classList.add('disabled');
+        if (i === selectedIndex) optBtns[i].classList.add('correct');
+      }
+      document.getElementById('wrongMessage').style.display = 'none';
+      setTimeout(function() {
+        if (testState.currentIndex < testState.questions.length - 1) {
+          testState.currentIndex = getNextUnanswered();
+          renderQuestion();
+        } else {
+          var allAnswered = true;
+          for (var j = 0; j < testState.questions.length; j++) {
+            var qq = testState.questions[j];
+            if (!testState.answers[qq.id] || !testState.answers[qq.id].correct) { allAnswered = false; break; }
+          }
+          if (allAnswered) finishTest();
+        }
+      }, 800);
+    } else {
+      optBtns[selectedIndex].classList.add('wrong');
+      optBtns[selectedIndex].classList.add('disabled');
+      var wrongMsg = document.getElementById('wrongMessage');
+      wrongMsg.style.display = 'block';
+      wrongMsg.className = 'wrong-msg';
+      wrongMsg.textContent = '❌ Noto\'g\'ri javob! To\'g\'ri javobni toping va keyingi savolga o\'ting.';
+    }
+  }
+
+  function startTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = setInterval(function() {
+      if (testState.isAnswering) return;
+      testState.timeLeft--;
+      updateTimerDisplay();
+      if (testState.timeLeft <= 0) {
+        var q = testState.questions[testState.currentIndex];
+        if (!testState.answers[q.id] || !testState.answers[q.id].correct) {
+          var optBtns = document.querySelectorAll('.option-btn');
+          for (var i = 0; i < optBtns.length; i++) {
+            optBtns[i].classList.add('disabled');
+            if (i === q.correctIndex) optBtns[i].classList.add('show-correct');
+          }
+          var wrongMsg = document.getElementById('wrongMessage');
+          wrongMsg.style.display = 'block';
+          wrongMsg.className = 'wrong-msg';
+          wrongMsg.textContent = '⏰ Vaqt tugadi! To\'g\'ri javobni belgilang.';
+        }
+      }
+    }, 1000);
+  }
+
+  function updateTimerDisplay() {
+    var badge = document.getElementById('timerBadge');
+    var mins = Math.floor(testState.timeLeft / 60);
+    var secs = testState.timeLeft % 60;
+    badge.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+    badge.classList.remove('safe', 'warning');
+    if (testState.timeLeft > testState.questionTime * 0.5) badge.classList.add('safe');
+    else if (testState.timeLeft > testState.questionTime * 0.25) badge.classList.add('warning');
+  }
+
+  function finishTest() {
+    if (timerInterval) clearInterval(timerInterval);
+    var totalTime = Math.floor((Date.now() - testState.startTime) / 1000);
+    var total = testState.questions.length;
+    var correct = testState.correctCount;
+    var wrong = total - correct;
+    var percentage = Math.round((correct / total) * 100);
+
+    var tests = getTests();
+    var idx = -1;
+    for (var i = 0; i < tests.length; i++) { if (tests[i].id === testState.testId) { idx = i; break; } }
+    if (idx !== -1) {
+      if (!tests[idx].results) tests[idx].results = [];
+      var resultObj = { studentName: testState.studentName, correct: correct, total: total, percentage: percentage, time: totalTime, completedAt: new Date().toISOString() };
+      tests[idx].results.push(resultObj);
+      saveTests(tests);
+      updateTestInCloud(tests[idx]);
+      saveResultToCloud(tests[idx].id, resultObj);
+    }
+
+    var allResults = [];
+    try {
+      var saved = storageGet('at_results');
+      if (saved) allResults = JSON.parse(saved);
+    } catch(e) {}
+    allResults.push({ studentName: testState.studentName, groupName: testState.groupName, testName: testState.testName, correct: correct, total: total, percentage: percentage, time: totalTime, completedAt: new Date().toISOString() });
+    try { storageSet('at_results', JSON.stringify(allResults)); } catch(e) {}
+
+    document.getElementById('scoreNum').textContent = correct;
+    document.getElementById('resultName').textContent = testState.studentName;
+    document.getElementById('resultGroup').textContent = testState.groupName + ' | ' + testState.testName;
+    document.getElementById('correctCount').textContent = correct;
+    document.getElementById('wrongCount').textContent = wrong;
+    document.getElementById('totalQuestions').textContent = total;
+    document.getElementById('timeSpent').textContent = Math.floor(totalTime/60) + ':' + (totalTime%60 < 10 ? '0' : '') + (totalTime%60);
+
+    var circle = document.getElementById('resultCircle');
+    circle.style.setProperty('--pct', percentage + '%');
+    if (percentage >= 70) circle.style.background = 'rgba(16,185,129,0.15)';
+    else if (percentage >= 50) circle.style.background = 'rgba(245,158,11,0.15)';
+    else circle.style.background = 'rgba(239,68,68,0.15)';
+
+    showScreen('resultScreen');
+    if (percentage >= 70) launchConfetti();
+  }
+
+  function launchConfetti() {
+    var container = document.createElement('div');
+    container.className = 'confetti-container';
+    document.body.appendChild(container);
+    var colors = ['#6c3ce0','#8b5cf6','#f59e0b','#10b981','#ef4444','#3b82f6'];
+    for (var i = 0; i < 60; i++) {
+      var piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.left = Math.random()*100 + '%';
+      piece.style.background = colors[Math.floor(Math.random()*colors.length)];
+      piece.style.animationDelay = Math.random()*2 + 's';
+      piece.style.width = (Math.random()*8+6) + 'px';
+      piece.style.height = (Math.random()*8+6) + 'px';
+      piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+      container.appendChild(piece);
+    }
+    setTimeout(function() { container.remove(); }, 4000);
+  }
+
+  // Prevent cheating during test
+  document.addEventListener('copy', function(e) { if (testState) e.preventDefault(); });
+  document.addEventListener('cut', function(e) { if (testState) e.preventDefault(); });
+  document.addEventListener('contextmenu', function(e) { if (testState) e.preventDefault(); });
+
+  // Init
+  console.log('✅ Zakovat — Bilim testlash platformasi ishga tushdi!');
+})();
+</script>
+</body>
+</html>
